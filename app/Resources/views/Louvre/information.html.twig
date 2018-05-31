@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent() }} - Informations {% endblock %}
+
+
+{% block body %}
+
+
+    <div class="offset-lg-2 col-lg-8 col-lg-2 mt-3 text-center">
+        <p>Tarif normal: 16€</p>
+        <p>Tarif enfant : de 4 à 12 ans (8€)</p>
+        <p>Tarif senior: à partir de 60 ans (12€)</p>
+        <p>Tarif réduit: étudiant, employé du Musée, servicee du Ministère de la Culture, militaire sur présentation
+            d'un justificatif (10€)</p><br>
+        <p>Pour les enfants de moins de 4 ans, l'entrée est gratuite. Vous n'avez pas à réserver de billets.</p>
+    </div>
+
+    <hr width="50%"><br>
+
+    <div class="form offset-lg-1 col-lg-10 offset-lg-1">
+    {{ form_start(form) }}
+    {% for ticket in form.tickets %}
+        <div class="card offset-lg-3 col-lg-6 offset-lg-3">
+            <div class="card-body">
+                <div id="form_booking">
+                    <div class="form-group">
+                        {{ form_label(ticket.name, "Nom") }}
+                        {{ form_widget(ticket.name, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(ticket.firstName, "Prénom") }}
+                        {{ form_widget(ticket.firstName, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(ticket.birthDate, "Date de Naissance") }}
+                        {{ form_widget(ticket.birthDate, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(ticket.country, "Pays de Résidence") }}
+                        {{ form_widget(ticket.country, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+
+                    <div class="text-center">
+                        {{ form_row(ticket.reducedPrice, { label:"Tarif réduit" }) }}
+                        <p>Un justificatif vous sera demandé.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div><br><br>
+    {% endfor %}
+        <input type="submit" value="Réserver" class="btn btnEltform ">
+    {{ form_end(form) }}
+    </div><br>
+
+
+{% endblock body %}

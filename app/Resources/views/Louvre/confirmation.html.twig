@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Confirmation {% endblock %}
+
+{% block body %}
+
+    <div id="thks"</div>
+    <h2 class="text-center">Le Musée du Louvre vous remercie pour votre commande.</h2><br>
+
+    <div class="offset-lg-2 col-lg-8 offset-lg-2">
+        <div class="card  text-center" id="encart1">
+            <div class="card-body">
+                <p>Votre commande n° .. est confirmée, les billets ont été envoyés à l'adresse suivante :</p>
+                <p>johndoe@gmail.com</p>
+                <a id="btnElt" class="btn btn-secondary offset-lg-8" href="{{ path('homepage') }}">Editer une facture</a><br>
+                <hr width="50%"><br><br>
+                <p>En cas de problème vous pouvez joindre le service client à l'addresse suivante :</p>
+                <p>serviceclient@louvre.com</p>
+                <br>
+                <a id="btnElt" class="btn btn-secondary offset-lg-8" href="{{ path('homepage') }}">Accueil</a>
+
+            </div>
+        </div>
+    </div>
+    <div id="thks"</div>
+
+
+{% endblock body %}

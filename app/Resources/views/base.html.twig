@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}Musée du Louvre{% endblock %}</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+
+
+</head>
+<body>
+<header>
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img class="navbar-brand" src="{{ asset('img/louvre-pyramid.png') }}" width="40px" ">
+        <a class="navbar-brand" href="{{ path('homepage') }}">Musée du Louvre</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a id="link" class="nav-item nav-link" href="#">Expositions</a>
+                <a id="link" class="nav-item nav-link" href="#">Actualités</a>
+                <a id="link" class="nav-item nav-link" href="#">Oeuvres</a>
+                <a id="link" class="nav-item nav-link" href="#">Le Palais</a>
+                <a id="linkBilleterie" class="nav-item nav-link " href="{{ path('order_step_1') }}">Billeterie</a>
+
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+{% block body %}
+{% endblock %}
+
+
+</body>
+<!-- Footer-->
+<footer>
+    <nav class="text-center">
+        <div id="footerelt" class="bg-dark text-white footer-text">© 2018 Musée du Louvre - Projet Educatif</div>
+    </nav>
+</footer>
+
+
 </html>

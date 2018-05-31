@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent() }} - Commander {% endblock %}
+
+
+{% block body %}
+
+    <div class="offset-lg-2 mt-3">
+        <p>Le Musée est ouvert tous les jours de 9h à 18h, sauf le mardi (fermeture hebdomadaire) et le 1er Mai, le 1er
+            Novembre et le 25 Décembre.</p>
+        <p>La commande de billet est ligne est impossible :</p>
+        <ul>
+            <li> Les Dimanches</li>
+            <li> Les jours feriés</li>
+            <li> Si plus de 1 000 billets ont déjà été vendus pour la journée en cours.</li>
+        </ul>
+
+        <p>(Pour ces dates, veuillez vous rendre directement au Musée pour acheter vos billets.</p><br>
+    </div>
+
+    <div class="card offset-lg-3 col-lg-6 offset-lg-3" id="orderElt">
+        <div class="card-body" style="background-color:">
+            <div class="form offset-lg-1 col-lg-10 offset-lg-1">
+                {{ form_start(form) }}
+                <div id="form_booking">
+                    <div>
+                        {{ form_row(form.email) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.visitDate, "Choisissez la date de votre visite") }}
+                        {{ form_widget(form.visitDate, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+
+                    <div><br>
+
+                        <p class="text-center">La commande de billet demi-journée permet d'accéder au Musée à partir de 14 heures seulement.</p>
+                        <p class="text-center">Elle est impossible pour la journée en cours, s'il il est plus de 14 heures.</p>
+                    </div><br>
+                    <hr>
+
+                    <div class="form-group text-center">
+                        {{ form_label(form.type, "Type de billet") }}
+                        {{ form_widget(form.type, {'attr': {'class': 'browser-default'}}) }}
+                    </div>
+
+
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div><br>
+
+
+
+
+{% endblock body %}
