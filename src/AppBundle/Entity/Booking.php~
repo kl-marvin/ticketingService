@@ -277,45 +277,5 @@ class Booking
     {
         $this->numberOfTickets = $numberOfTickets;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->tickets = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add ticket
-     *
-     * @param \AppBundle\Entity\Ticket $ticket
-     *
-     * @return Booking
-     */
-    public function addTicket(\AppBundle\Entity\Ticket $ticket)
-    {
-        $this->tickets[] = $ticket;
-
-        return $this;
-    }
-
-    /**
-     * Remove ticket
-     *
-     * @param \AppBundle\Entity\Ticket $ticket
-     */
-    public function removeTicket(\AppBundle\Entity\Ticket $ticket)
-    {
-        $this->tickets->removeElement($ticket);
-    }
-
-    /**
-     * Get tickets
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTickets()
-    {
-        return $this->tickets;
-    }
 }
+

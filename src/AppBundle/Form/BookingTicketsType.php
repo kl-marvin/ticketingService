@@ -16,7 +16,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
-class BookingType extends AbstractType
+class BookingTicketsType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -24,47 +24,14 @@ class BookingType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email',  RepeatedType::class, array(
-                'type' => EmailType::class,
-                'invalid_message' => 'Les addresses ne correspondent pas.',
-                'required' => true,
-                'first_options' => array('label' => 'Entrez votre email'),
-                'second_options' => array('label' => "Saisissez à nouveau votre email"),
-            ))
-           ->add('visitDate', DateType::class, array(
-               'label' => 'Date de la visite',
-               'format' => 'dd/MM/yyyy',
-               'years' => range(date('Y'),date('Y')+2),
-               'placeholder' => array(
-                   'year' => 'Année',
-                   'month' => 'Mois',
-                   'day' => 'Jour',
-                ),
-           ))
-            ->add('type', ChoiceType::class, array(
-                'choices' => array(
-                    'Journée' => 'Journée',
-                    'Demi-journée' => 'Demi-journée'
-                ),
-                // 'expanded' => true,
-                // 'multiple' => false,
-
-            ))
-
-        ->add('numberOfTickets', IntegerType::class)
-
-        ->add('save', SubmitType::class, array(
-            'label' => 'Commander',
-            'attr' => array(
-                'class' => "waves-effect waves-light btn-large",
-                'style' => "background-color: #c22131; margin-left: 35%",
+            ->add('tickets', CollectionType::class, array(
+                    'entry_type' => TicketType::class)
+            );
 
 
-            )
-    ));
+    }
 
-
-    }/**
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
