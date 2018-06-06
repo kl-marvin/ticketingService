@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Récapitulation {% endblock %}
+
+
+
+{% block body %}
+
+    <div class="card offset-3 col-lg-6 offset-3 mt-5">
+        <div class="card-body">
+            <h3 class="text-center">Récapitulatif de votre commande</h3>
+            <p class="text-center mt-2">Visite prévue le :</p>
+            {% for booking in booking %}
+                <span>{{ booking.visitDate }}</span>
+            {% endfor %}
+            <hr>
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <form action="" method="POST">
+
+            <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_test_HxZzNHy8LImKK9LDtgMDRBwd"
+                    data-amount="999"
+                    data-name="Musée du Louvre"
+                    date-currency="euro"
+                    data-locale="auto">
+            </script>
+        </form>
+    </div>
+
+
+
+{% endblock body %}
