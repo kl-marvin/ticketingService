@@ -1,0 +1,51 @@
+<html>
+<head>Commande validée</head>
+
+<body>
+    <img src="{{ asset('img/louvre-pyramid.png') }}">
+    <h1>Musée du Louvre</h1>
+
+<p>Ce mail contient vos billets d'entrée au Musée du Louvre</p>
+
+<p>Date de visite : {{ booking.visitDate|date("m/d/Y", "Europe/Paris") }} </p>
+<p>Référence de la commande : {{ booking.reference }}</p>
+
+
+    <div class="card offset-3 col-lg-6 offset-3 mt-5" id="orderElt">
+        <div class="card-body">
+            <h3 class="text-center">Récapitulatif de votre commande</h3>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th class="text-center">Prix du billet</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for ticket in booking.tickets %}
+                    <tr>
+                        <td>{{ ticket.name }}</td>
+                        <td>{{ ticket.firstName }}</td>
+                        <th class="text-center">{{ ticket.price }}</th>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <p class="text-center mt-4" > Prix total : </p>
+            <p class="text-center">{{ booking.totalPrice }},00 €</p>
+
+        </div>
+    </div>
+
+    <p>En cas de problème vous pouvez joindre le service client à l'adresse suivante :</p>
+    <p>serviceclient@louvre.com</p>
+    <br>
+
+
+
+</body>
+
+</html>
