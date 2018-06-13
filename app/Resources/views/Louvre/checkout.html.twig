@@ -6,31 +6,50 @@
 
 {% block body %}
 
-    <div class="card offset-3 col-lg-6 offset-3 mt-5">
+    <div class="card offset-3 col-lg-6 offset-3 mt-5" id="orderElt">
         <div class="card-body">
             <h3 class="text-center">Récapitulatif de votre commande</h3>
-            <p class="text-center mt-2">Visite prévue le :</p>
-            {% for booking in booking %}
-                <span>{{ booking.visitDate }}</span>
-            {% endfor %}
-            <hr>
+            <p class="text-center mt-2">Visite prévue le : {{ booking.visitDate|date("m/d/Y", "Europe/Paris") }}</p>
+
+               <table class="table">
+                   <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th class="text-center">Prix du billet</th>
+                    </tr>
+                   </thead>
+                   <tbody>
+                   {% for ticket in booking.tickets %}
+                    <tr>
+                        <td>{{ ticket.name }}</td>
+                        <td>{{ ticket.firstName }}</td>
+                        <th class="text-center">{{ ticket.price }}</th>
+                    </tr>
+                   {% endfor %}
+                   </tbody>
+               </table>
+
+            <p class="text-center mt-4" > Prix total : </p>
+            <p class="text-center">{{ booking.totalPrice }},00 €</p>
+
         </div>
     </div>
+    <form action="" method="POST" class="text-center mt-3 mb-5">
+        <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="{{ stripe_public_key }}"
+                data-amount='{{ booking.totalPrice * 100}} '
+                data-name="Billeterie du Louvre "
+                data-description="Commande de  {{ booking.tickets|length }} billets"
+                data-image="{{ asset('img/louvrecover.jpg') }}"
+                data-locale="auto"
+                data-email="{{ booking.email }}"
+                data-label="Payez en CB"
+                data-currency="eur">
 
-    <div class="text-center mt-3">
-        <form action="" method="POST">
-
-            <script
-                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="pk_test_HxZzNHy8LImKK9LDtgMDRBwd"
-                    data-amount="999"
-                    data-name="Musée du Louvre"
-                    date-currency="euro"
-                    data-locale="auto">
-            </script>
-        </form>
-    </div>
-
+        </script>
+    </form>
 
 
 {% endblock body %}

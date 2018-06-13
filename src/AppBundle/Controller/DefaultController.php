@@ -8,6 +8,7 @@ use AppBundle\Form\TicketType;
 use AppBundle\Manager\BookingManager;
 use AppBundle\Repository\BookingRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Stripe\Error\Card;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -41,14 +42,13 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
 
-          if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
 
-              $bookingManager->generateTicketsForBooking($booking);
+            $bookingManager->generateTicketsForBooking($booking);
 
             return $this->redirectToRoute("order_step_2");
 
         }
-
 
 
         return $this->render('Louvre/order.html.twig', array(
@@ -68,7 +68,8 @@ class DefaultController extends Controller
         $form = $this->createForm(BookingTicketsType::class, $booking);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
+            $bookingManager->computePrice($booking);
             return $this->redirectToRoute("order_step_3");
         }
 
@@ -80,28 +81,65 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/recapitulation", name="order_step_3")
+     * @Route("/checkout", name="order_step_3")
      */
-    public function recapAction()
+    public function checkoutAction(Request $request, BookingManager $bookingManager, \Swift_Mailer $mailer)
     {
-        // Tableau recap
+        $booking = $bookingManager->getCurrentBooking();
+        dump($booking);
 
-        // Stripe si méthode de paiement ok -> / génération numéro commande /  bdd /  envoie du mail / redirection
+        if ($request->isMethod('POST')) {
+            $token = $request->request->get('stripeToken');
+            $amount = $booking->getTotalPrice();
+
+
+            \Stripe\Stripe::setApiKey($this->getParameter('stripe_secret_key'));
+            try {
+            $stripeReturn = \Stripe\Charge::create(array(
+                "amount" => $amount * 100,
+                "currency" => "eur",
+                "source" => $token,
+                "description" => "First test charge!",
+
+            ));
+            dump($stripeReturn);
+            $bookingManager->computeReference($booking, $stripeReturn['id']);
+            $bookingManager->sendEmail($booking, $mailer, $this->renderView('Louvre/emailTemplate.html.twig',
+                array('booking' => $booking,)
+            ));
+            $bookingManager->save($booking);
+            $this->addFlash('success', 'Commande effectuée');
+            return $this->redirectToRoute("order_step_4");
+
+
+        }catch(Card $exception)
+            {
+                $this->addFlash('warning', 'Il y a eu un problème lors de votre paiement. La transaction a été annulée');
+            }
+        }
+
+        return $this->render('Louvre/checkout.html.twig', array(
+            'booking' => $booking,
+            'stripe_public_key' => $this->getParameter('stripe_public_key')
+        ));
+        // Stripe si méthode de paiement ok -> / génération numéro commande /  bdd /  envoie du mail / redirection  // Tableau recap
+
     }
-
-
 
 
     /**
      * @Route("/confirmation", name="order_step_4")
      */
-    public function confirmationAction()
+    public function confirmationAction(BookingManager $bookingManager)
     {
-        return $this->render('Louvre/confirmation.html.twig');
+        $booking = $bookingManager->getCurrentBooking();
+        // TODO vider session
 
+        dump($booking);
+        return $this->render('Louvre/confirmation.html.twig', array(
+            'booking' => $booking,
+        ));
 
-        // recup session
-        // suppression de session
     }
 
 }
