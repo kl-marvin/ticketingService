@@ -10,5 +10,5 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: 47038b061e667736892240a8b1bcb653c5b020be
-    stripe_secret_key: sk_test_5PTwwERED3gpER4inFVkf2mj
-    stripe_public_key: pk_test_7AKehRevryod4YxzxDgn64vM
+    stripe_secret_key:
+    stripe_public_key:
