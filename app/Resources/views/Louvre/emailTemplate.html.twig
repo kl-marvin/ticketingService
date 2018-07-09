@@ -1,51 +1,53 @@
 <html>
-<head>Commande validée</head>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body style="font-family: Avenir; text-align: center">
 
-<body>
-    <img src="{{ asset('img/louvre-pyramid.png') }}">
-    <h1>Musée du Louvre</h1>
-
-<p>Ce mail contient vos billets d'entrée au Musée du Louvre</p>
-
-<p>Date de visite : {{ booking.visitDate|date("m/d/Y", "Europe/Paris") }} </p>
-<p>Référence de la commande : {{ booking.reference }}</p>
+<p style="font-size: 2em; text-align: center"><img src="https://image.flaticon.com/icons/svg/64/64050.svg" alt="logo musée du louvre" width="134" height="83" style="vertical-align: -20px"/> Musée du Louvre</p>
 
 
-    <div class="card offset-3 col-lg-6 offset-3 mt-5" id="orderElt">
-        <div class="card-body">
-            <h3 class="text-center">Récapitulatif de votre commande</h3>
+<p style="font-size: 22px; color: #A32A2C;">Ce mail contient vos billets d'entrée au Musée du Louvre.</p>
+<p>Accès prioritaire depuis la Pyramide </p>
 
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th class="text-center">Prix du billet</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for ticket in booking.tickets %}
-                    <tr>
-                        <td>{{ ticket.name }}</td>
-                        <td>{{ ticket.firstName }}</td>
-                        <th class="text-center">{{ ticket.price }}</th>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+<span style="margin-right: 10px">Date de visite : {{ booking.visitDate|date("m/d/Y", "Europe/Paris") }} </span>
+<span>Référence de la commande : {{ booking.reference|upper }}</span>
 
-            <p class="text-center mt-4" > Prix total : </p>
-            <p class="text-center">{{ booking.totalPrice }},00 €</p>
 
-        </div>
-    </div>
+<hr style="width: 50%; margin-top: 25px;">
 
-    <p>En cas de problème vous pouvez joindre le service client à l'adresse suivante :</p>
-    <p>serviceclient@louvre.com</p>
-    <br>
+<h3 style='color: #A32A2C;'>Récapitulatif de votre commande :</h3>
 
+<div style="margin-left: auto; margin-right: auto; width: 550px">
+<table>
+    <tr>
+        <td style="padding-right: 10px; font-weight: bold">Nom</td>
+        <td style="padding-right: 10px; font-weight: bold">Prénom</td>
+        <td style="padding-right: 10px; font-weight: bold">Date de Naissance</td>
+        <td style="padding-right: 10px; font-weight: bold">Prix du billet</td>
+    </tr>
+    {% for ticket in booking.tickets %}
+    <tr>
+            <td style="padding-right: 10px">{{ ticket.name }}</td>
+            <td style="padding-right: 10px">{{ ticket.firstName }}</td>
+            <td style="padding-right: 10px; text-align: center"> {{ ticket.birthDate|date("m/d/Y", "Europe/Paris") }}</td>
+            <td style="padding-right: 10px; text-align: center">{{ ticket.price }}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+
+<h4>Pour le tarif réduit, un justificatif vous sera demandé.</h4>
+
+<span>Prix total : </span><span style='color: #A32A2C; font-weight: bold'>{{ booking.totalPrice }},00 €</span>
+
+<hr style="margin-top: 45px;">
+
+<p>En cas de problème vous pouvez joindre le service client à l'adresse suivante :</p>
+<p>serviceclient@louvre.com</p>
 
 
 </body>
-
 </html>
