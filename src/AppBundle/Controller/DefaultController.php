@@ -83,46 +83,20 @@ class DefaultController extends Controller
     /**
      * @Route("/checkout", name="order_step_3")
      */
-    public function checkoutAction(Request $request, BookingManager $bookingManager, \Swift_Mailer $mailer)
+    public function checkoutAction(BookingManager $bookingManager)
     {
         $booking = $bookingManager->getCurrentBooking();
-        dump($booking);
 
-        if ($request->isMethod('POST')) {
-            $token = $request->request->get('stripeToken');
-            $amount = $booking->getTotalPrice();
-
-
-            \Stripe\Stripe::setApiKey($this->getParameter('stripe_secret_key'));
-            try {
-            $stripeReturn = \Stripe\Charge::create(array(
-                "amount" => $amount * 100,
-                "currency" => "eur",
-                "source" => $token,
-                "description" => "First test charge!",
-
-            ));
-            dump($stripeReturn);
-            $bookingManager->computeReference($booking, $stripeReturn['id']);
-            $bookingManager->sendEmail($booking, $mailer, $this->renderView('Louvre/emailTemplate.html.twig',
-                array('booking' => $booking,)
-            ));
-            $bookingManager->save($booking);
+        if($bookingManager->paiement($booking))
+        {
             $this->addFlash('success', 'Commande effectuée');
             return $this->redirectToRoute("order_step_4");
-
-
-        }catch(Card $exception)
-            {
-                $this->addFlash('warning', 'Il y a eu un problème lors de votre paiement. La transaction a été annulée');
-            }
         }
 
         return $this->render('Louvre/checkout.html.twig', array(
             'booking' => $booking,
             'stripe_public_key' => $this->getParameter('stripe_public_key')
         ));
-        // Stripe si méthode de paiement ok -> / génération numéro commande /  bdd /  envoie du mail / redirection  // Tableau recap
 
     }
 
@@ -134,12 +108,21 @@ class DefaultController extends Controller
     {
         $booking = $bookingManager->getCurrentBooking();
         // TODO vider session
+       //  $booking = $session->remove('booking');
 
         dump($booking);
         return $this->render('Louvre/confirmation.html.twig', array(
             'booking' => $booking,
         ));
+    }
 
+
+    /**
+     * @Route("/translate", name="translate")
+     */
+    public function translateAction()
+    {
+        return $this->render('Louvre/translate.html.twig');
     }
 
 }

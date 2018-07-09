@@ -11,6 +11,8 @@ namespace AppBundle\Manager;
 
 use AppBundle\Entity\Booking;
 use AppBundle\Entity\Ticket;
+use AppBundle\Service\MailService;
+use AppBundle\Service\PaiementService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -54,16 +56,26 @@ class BookingManager
      * @var EntityManagerInterface
      */
     private $entityManager;
+    /**
+     * @var PaiementService
+     */
+    private $paiementService;
+    /**
+     * @var MailService
+     */
+    private $mailService;
 
     /**
      * BookingManager constructor.
      * @param SessionInterface $session
      * @param EntityManagerInterface $entityManager
      */
-    public function __construct(SessionInterface $session, EntityManagerInterface $entityManager)
+    public function __construct(SessionInterface $session, EntityManagerInterface $entityManager, PaiementService $paiementService, MailService $mailService)
     {
         $this->session = $session;
         $this->entityManager = $entityManager;
+        $this->paiementService = $paiementService;
+        $this->mailService = $mailService;
     }
 
     /**
@@ -156,11 +168,7 @@ class BookingManager
      */
     public function sendEmail(Booking $booking, \Swift_Mailer $mailer, $html)
     {
-        $message = (new \Swift_Message('Confirmation de Commande Numéro : ' . $booking->getReference()))
-            ->setFrom('adresse@email.com')
-            ->setTo($booking->getEmail())
-            ->setBody($html, 'text/html');
-        $mailer->send($message);
+
 
 
     }
@@ -169,6 +177,19 @@ class BookingManager
     {
         $this->entityManager->persist($booking);
         $this->entityManager->flush();
+    }
+
+    public function paiement(Booking $booking)
+    {
+        $reference = $this->paiementService->bookingCheckout($booking);
+        if($reference !== false){
+            $booking->setReference($reference);
+            $this->mailService->sendBookingConfirmation($booking);
+            //$this->$this->save($booking);
+            return true;
+        }
+        return false;
+
     }
 
 
