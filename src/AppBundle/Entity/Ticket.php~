@@ -22,7 +22,7 @@ class Ticket
     private $id;
 
     /**
-     * @var int
+     * @var Booking
      *
      * @ORM\ManyToOne(targetEntity="Booking", inversedBy="tickets")
      * @ORM\JoinColumn(nullable=false)
@@ -58,9 +58,9 @@ class Ticket
     private $country;
 
     /**
-     * @var string
+     * @var float
      *
-     * @ORM\Column(name="price", type="string", length=255)
+     * @ORM\Column(name="price", type="float")
      */
     private $price;
 
@@ -241,5 +241,20 @@ class Ticket
     {
         $this->reducedPrice = $reducedPrice;
     }
-}
 
+    /**
+     * Get reducedPrice
+     *
+     * @return boolean
+     */
+    public function getReducedPrice()
+    {
+        return $this->reducedPrice;
+    }
+
+
+    public function getAge()
+    {
+        return $this->booking->getVisitDate()->diff($this->birthDate)->y;
+    }
+}

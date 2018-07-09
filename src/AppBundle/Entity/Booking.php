@@ -3,15 +3,21 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use AppBundle\Validator as LouvreAssert;
 
 /**
  * Booking
  *
  * @ORM\Table(name="booking")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\BookingRepository")
+ * @LouvreAssert\HalfdayBooking()
  */
 class Booking
 {
+    const TYPE_FULL_DAY = 1;
+    const TYPE_HALF_DAY = 2;
+
     /**
      * @var int
      *
@@ -24,41 +30,46 @@ class Booking
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstName", type="string", length=255)
+     * @ORM\Column(name="firstName", type="string", length=255, nullable=true)
      */
     private $firstName;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="datetime")
+     * @Assert\DateTime()
+     * @ORM\Column(name="date", type="datetime", nullable=true)
      */
     private $date;
 
     /**
      * @var \DateTime
-     *
+     * @Assert\DateTime()
+     * @Assert\GreaterThanOrEqual("today")
+     * @LouvreAssert\TuesdaysClosing()
+     * @LouvreAssert\SundaysClosing()
+     * @LouvreAssert\BankHolidays()
+     * @LouvreAssert\OpeningHours()
      * @ORM\Column(name="visitDate", type="datetime")
      */
     private $visitDate;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\Column(name="type", type="integer")
      */
     private $type;
 
     /**
      * @var string
-     *
+     * @Assert\Email()
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
@@ -71,9 +82,9 @@ class Booking
     private $tickets;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="reference", type="string", length=255)
+     * @ORM\Column(name="reference", type="integer")
      */
     private $reference;
 
@@ -81,6 +92,14 @@ class Booking
      * @var integer
      */
     private $numberOfTickets;
+
+
+    /**
+     * @var float
+     * @ORM\Column(name="totalPrice", type="float")
+     */
+    private $totalPrice;
+
 
 
     /**
@@ -247,6 +266,8 @@ class Booking
      */
     public function setReference($reference)
     {
+        // $reference = rand(0, 14000);
+
         $this->reference = $reference;
 
         return $this;
@@ -295,6 +316,7 @@ class Booking
     public function addTicket(\AppBundle\Entity\Ticket $ticket)
     {
         $this->tickets[] = $ticket;
+        $ticket->setBooking($this);
 
         return $this;
     }
@@ -312,10 +334,34 @@ class Booking
     /**
      * Get tickets
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return Ticket[]| \Doctrine\Common\Collections\Collection
      */
     public function getTickets()
     {
         return $this->tickets;
+    }
+
+    /**
+     * Set totalPrice
+     *
+     * @param float $totalPrice
+     *
+     * @return Booking
+     */
+    public function setTotalPrice($totalPrice)
+    {
+        $this->totalPrice = $totalPrice;
+
+        return $this;
+    }
+
+    /**
+     * Get totalPrice
+     *
+     * @return float
+     */
+    public function getTotalPrice()
+    {
+        return $this->totalPrice;
     }
 }
