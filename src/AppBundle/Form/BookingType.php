@@ -26,25 +26,20 @@ class BookingType extends AbstractType
         $builder
             ->add('email',  RepeatedType::class, array(
                 'type' => EmailType::class,
-                'invalid_message' => 'Les addresses ne correspondent pas.',
+                'invalid_message' => 'error.Les addresses ne correspondent pas.',
                 'required' => true,
-                'first_options' => array('label' => 'Entrez votre email'),
-                'second_options' => array('label' => "Saisissez à nouveau votre email"),
+                'first_options' => array('label' => 'orderstep_1.action.chooseEmail'),
+                'second_options' => array('label' => 'oderstep_1.action.confirmEmail'),
             ))
            ->add('visitDate', DateType::class, array(
-               'label' => 'Date de la visite',
-               'format' => 'dd/MM/yyyy',
+               'label' => 'form.action.chooseVisitDate',
                'years' => range(date('Y'),date('Y')+2),
-               'placeholder' => array(
-                   'year' => 'Année',
-                   'month' => 'Mois',
-                   'day' => 'Jour',
-                ),
+               'widget' => 'single_text',
            ))
             ->add('type', ChoiceType::class, array(
                 'choices' => array(
-                    'Journée' => 'Journée',
-                    'Demi-journée' => 'Demi-journée'
+                    'orderstep_1.action.fullDay' => Booking::TYPE_FULL_DAY,
+                   'orderstep_1.action.halfDay' => Booking::TYPE_HALF_DAY,
                 ),
                 'expanded' => true,
                 'multiple' => false,
@@ -52,11 +47,11 @@ class BookingType extends AbstractType
             ))
 
         ->add('numberOfTickets', IntegerType::class, array(
-            'label' => 'Nombre de billet(s)'
+            'label' => 'orderstep_1.action.choiceNumberOfTicket'
         ))
 
         ->add('save', SubmitType::class, array(
-            'label' => 'Suivant',
+            'label' => 'orderstep_1.action.order',
             'attr' => array(
                 'class' => "btnEltform",
             )
