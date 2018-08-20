@@ -117,12 +117,4 @@ class DefaultController extends Controller
     }
 
 
-    /**
-     * @Route("/translate", name="translate")
-     */
-    public function translateAction()
-    {
-        return $this->render('Louvre/translate.html.twig');
-    }
-
 }
