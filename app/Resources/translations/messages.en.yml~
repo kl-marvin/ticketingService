@@ -1,0 +1,78 @@
+base.menuElt0: 'The Louvre'
+base.menuElt1: Exhibitions
+base.menuElt2: News
+base.menuElt3: 'Art Work'
+base.menuElt4: 'The Palace'
+base.menuElt5: 'Online Tickets'
+base.footerElt: '© 2018 Louvre Museum - Educational Project'
+orderstep_2.title: 'Ticket Details'
+orderstep_2.paragrah1: 'Normal price : 16€'
+orderstep_2.paragrah2: 'Child price: from 4 to 12 years old (8€)'
+orderstep_2.paragrah3: 'Senior price: from 60 years old (12€)'
+orderstep_2.paragrah4: 'Reduce price : student, employee of the Museum, department of the Minister of Culture, military (10€)'
+orderstep_2.paragraph5: 'Admission is free for children under 4 years old. You dont'' need to order a ticket'
+orderstep_2.paragraph6: 'A justicatory will be ask.'
+orderstep_2.action.choiceName: Name
+orderstep_2.action.choiceFirstName: 'First Name'
+orderstep_2.action.choiceBirthdate: Birthdate
+orderstep_2.action.choiceCountry: 'Country of Residence'
+orderstep_2.action.reduceprice: 'Reduce price'
+orderstep_4.title: Confirmation
+orderstep_4.title1: 'Thank you for your order ! '
+orderstep_4.paragraph1: 'Your order n°'
+orderstep_4.paragraph2: 'is confirmed, the tickets have been sent to the following email address : '
+orderstep_4.link1: 'Print an Invoice'
+orderstep_4.paragraph3: 'If you have any problem or question, feel free to contact our customer service at the following address :'
+orderstep_4.paragraph4: serviceclient@louvre.com
+orderstep_4.link2: Homepage
+orderstep_1.title: Order
+orderstep_1.paragrah1: 'The Museum is open every day from 9am to 6pm, except Tuesdays (Weekly closing) and May the First, November the First and December 25th.'
+orderstep_1.paragraph2: 'Online ticket ordering is not possible on :'
+orderstep_1.listItem1: Sundays
+orderstep_1.listItem2: 'Bank Holidays'
+orderstep_1.listItem3: 'If more than 1000 tickets have already been sold online for the current day'
+orderstep_1.paragraph3: 'For theses dates, please go directly to the Museum to buy your tickets.'
+orderstep_1.action.choiceVisitDate: 'Choose your visit date'
+orderstep_1.paragraph4: 'The half-day ticket alows you to enter the Museum only from 2pm.'
+orderstep_1.paragraph5: 'Ordering an half-day ticket is impossible for the current day after 2pm. '
+orderstep_1.action.choiceTicketType: 'Ticket Type'
+orderstep_1.action.choiceNumberOfTicket: 'Choose number of ticket'
+orderstep_1.action.chooseEmail: 'Choose your email'
+oderstep_1.action.confirmEmail: 'Confirm your email'
+orderstep_1.action.fullDay: 'Full Day'
+orderstep_1.action.halfDay: 'Half Day'
+orderstep_1.action.order: order
+orderstep_1.paragraph6: 'Admission is free for children under 4 years old. You don''t need to order a ticket.'
+email.paragraph1: 'This email contains your tickets for the Louvre Museum.'
+email.paragraph2: 'Priority access by the Pyramid'
+email.paragraph3: 'Visit date :'
+email.paragraph4: 'Order reference : '
+email.paragraph5: 'Order Summary'
+'email.labelName:': Name
+email.labelFirstName: 'First Name'
+email.labelBirthdate: Birthdate
+email.labelPrice: Prix
+email.paragraph6: 'A document proof will be ask for reduce price'
+email.paragraph7: 'If you have any problem or question, feel free to contact our customer service at the following address :'
+homepage.title: Homepage
+homepage.title1: 'Louvre Museum'
+homepage.paragraph1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis pharetra porttitor. Nulla facilisi. Sed a diam ut nisi fermentum volutpat ac nec nisl. In dictum consectetur orci nec sagittis. Pellentesque vulputate, ipsum et rutrum cursus, leo odio vulputate quam, sit amet sollicitudin nunc turpis vitae leo.'
+homepage.paragraph2: 'Phasellus ex erat, elementum malesuada euismod vel, tincidunt sed mi. Vivamus dapibus ac est laoreet scelerisque. Maecenas imperdiet augue quis mi tempor, eget venenatis dolor ultricies. Vivamus eget tincidunt ex. Ut quis tortor a tellus viverra sagittis id vel ipsum. Morbi commodo vehicula mauris id laoreet. Aenean pretium dolor quis erat pretium, vel porta ante tristique. Sed sollicitudin volutpat nisl quis rhoncus. Cras porttitor, ex eu pharetra placerat, lectus urna sodales enim, maximus sollicitudin libero nibh eget lorem.'
+homepage.paragraph3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis pharetra porttitor. Nulla facilisi. Sed a diam ut nisi fermentum volutpat ac nec nisl. In dictum consectetur orci ne sagittis Pellentesque vulputate, ipsum et rutrum cursus, leo odio vulputate quam, sit amet sollicitudin nuncturpis vitae leo.'
+homepage.banner: 'Order directly your ticket online'
+homepage.link1: 'Online Tickets'
+homepage.cardTitle1: News
+homepage.cardContent1: 'Nam aliquam ultrices lectus, nec mattis quam dapibus in. Nulla faucibus, quam sit amet pretium auctor risus massa ultrices nisi, sed faucibus nulla ligula eget lectus. Praesent id nibh ullamcorper, condimentum nulla eget, auctor dui. In euismod enim et erat porttitor volutpa Suspendisse potenti. Cras at tempor metus. Morbi in semper sapien, in mattis sem.'
+homepage.button.knowMore: 'Learn More'
+homepage.cardTitle2: 'Art Work'
+homepage.cardContent2: 'Nam aliquam ultrices lectus, nec mattis quam dapibus in. Nulla faucibus, quam sit amet pretium auctor risus massa ultrices nisi, sed faucibus nulla ligula eget lectus. Praesent id nibh ullamcorper, condimentum nulla eget, auctor dui. In euismod enim et erat porttitor volutpa Suspendisse potenti. Cras at tempor metus. Morbi in semper sapien, in mattis sem.'
+homepage.cardTitle3: 'The Palace'
+homepage.cardContent3: 'Nam aliquam ultrices lectus, nec mattis quam dapibus in. Nulla faucibus, quam sit amet pretium auctor risus massa ultrices nisi, sed faucibus nulla ligula eget lectus. Praesent id nibh ullamcorper, condimentum nulla eget, auctor dui. In euismod enim et erat porttitor volutpa Suspendisse potenti. Cras at tempor metus. Morbi in semper sapien, in mattis sem.'
+orderstep_3.title: 'Order Summary'
+orderstep_3.title1: 'Order Summary'
+orderstep_3.paragrah1: 'Visit date :'
+orderstep_3.labelName: Name
+orderstep_3.labelFirstName: 'First Name'
+orderstep_3.labelTicketPrice: Price
+orderstep_3.labelTotalPrice: 'Total price'
+orderstep_3.PaiementButton: 'Pay by Card'

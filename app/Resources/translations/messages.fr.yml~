@@ -1,0 +1,79 @@
+orderstep_1.title: Commander
+orderstep_1.paragrah1: 'Le Musée est ouvert tous les jours de 9h à 18h, sauf le mardi (fermeture hebdomadaire) et le 1er Mai, le 1er\nNovembre et le 25 Décembre.'
+orderstep_1.paragraph2: 'La commande de billet est ligne est impossible :'
+orderstep_1.listItem1: 'Les Dimanches'
+orderstep_1.listItem2: 'Les jours fériés'
+orderstep_1.listItem3: 'Si plus de 1 000 billets ont déjà été vendus pour la journée en cours'
+orderstep_1.paragraph3: '(Pour ces dates, veuillez vous rendre directement au Musée pour acheter vos billets.)'
+orderstep_1.action.chooseEmail: 'Choisissez votre email'
+oderstep_1.action.confirmEmail: 'Confirmez votre email'
+orderstep_1.action.choiceVisitDate: 'Choisissez la date de votre visite'
+orderstep_1.action.choiceTicketType: 'Type de billet'
+orderstep_1.action.fullDay: Journée
+orderstep_1.action.halfDay: Demi-journée
+orderstep_1.action.choiceNumberOfTicket: 'Nombre(s) de billet'
+orderstep_1.action.order: Commandez
+orderstep_1.paragraph4: 'La commande de billet demi-journée permet d''accéder au Musée à partir de 14 heures seulement.'
+orderstep_1.paragraph5: 'Elle est impossible pour la journée en cours, s'' il est plus de 14 heures.'
+orderstep_1.paragraph6: 'Pour les enfants de moins de 4 ans, l''entrée est gratuite. Vous n''avez pas à réserver de billets.'
+orderstep_2.title: Informations
+orderstep_2.paragrah1: 'Tarif normal: 16€'
+orderstep_2.paragrah2: 'Tarif enfant : de 4 à 12 ans (8€)'
+orderstep_2.paragrah3: 'Tarif senior: à partir de 60 ans (12€)'
+orderstep_2.paragrah4: "Tarif réduit: étudiant, employé du Musée, servicee du Ministère de la Culture, militaire sur présentation\n d'un justificatif (10€)"
+orderstep_2.paragraph5: 'Pour les enfants de moins de 4 ans, l''entrée est gratuite. Vous n''avez pas à réserver de billets.'
+orderstep_2.paragraph6: 'Un justificatif vous sera demandé.'
+orderstep_2.action.choiceName: Nom
+orderstep_2.action.choiceFirstName: Prénom
+orderstep_2.action.choiceBirthdate: 'Date de Naissance'
+orderstep_2.action.choiceCountry: 'Pays de Résidence'
+orderstep_2.action.reduceprice: 'Tarif Réduit'
+orderstep_3.title: Récapitulatif
+orderstep_3.title1: 'Récapitulatif de votre commande'
+orderstep_3.paragrah1: 'Visite prévue le :'
+orderstep_3.labelName: Nom
+orderstep_3.labelFirstName: Prénom
+orderstep_3.labelTicketPrice: 'Prix du billet'
+orderstep_3.labelTotalPrice: 'Prix total :'
+orderstep_3.PaiementButton: 'Payez en CB'
+orderstep_4.title: Confirmation
+orderstep_4.title1: 'Le Musée du Louvre vous remercie pour votre commande.'
+orderstep_4.paragraph1: 'Votre commande n°'
+orderstep_4.paragraph2: 'est confirmée, les billets ont été envoyés à l''adresse suivante :'
+orderstep_4.link1: 'Editer une facture'
+orderstep_4.paragraph3: 'En cas de problème vous pouvez joindre le service client à l''adresse suivante :'
+orderstep_4.paragraph4: serviceclient@louvre.com
+orderstep_4.link2: Accueil
+homepage.title: Accueil
+homepage.title1: 'Musée du Louvre'
+homepage.paragraph1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis pharetra porttitor. Nulla facilisi. Sed a diam ut nisi fermentum volutpat ac nec nisl. In dictum consectetur orci nec sagittis. Pellentesque vulputate, ipsum et rutrum cursus, leo odio vulputate quam, sit amet sollicitudin nunc turpis vitae leo.'
+homepage.paragraph2: 'Phasellus ex erat, elementum malesuada euismod vel, tincidunt sed mi. Vivamus dapibus ac est laoreet scelerisque. Maecenas imperdiet augue quis mi tempor, eget venenatis dolor ultricies. Vivamus eget tincidunt ex. Ut quis tortor a tellus viverra sagittis id vel ipsum. Morbi commodo vehicula mauris id laoreet. Aenean pretium dolor quis erat pretium, vel porta ante tristique. Sed sollicitudin volutpat nisl quis rhoncus. Cras porttitor, ex eu pharetra placerat, lectus urna sodales enim, maximus sollicitudin libero nibh eget lorem.'
+homepage.paragraph3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis pharetra porttitor. Nulla facilisi. Sed a diam ut nisi fermentum volutpat ac nec nisl. In dictum consectetur orci ne sagittis Pellentesque vulputate, ipsum et rutrum cursus, leo odio vulputate quam, sit amet sollicitudin nuncturpis vitae leo.'
+homepage.cardContent1: 'Nam aliquam ultrices lectus, nec mattis quam dapibus in. Nulla faucibus, quam sit amet pretium auctor risus massa ultrices nisi, sed faucibus nulla ligula eget lectus. Praesent id nibh ullamcorper, condimentum nulla eget, auctor dui. In euismod enim et erat porttitor volutpa Suspendisse potenti. Cras at tempor metus. Morbi in semper sapien, in mattis sem.'
+homepage.cardContent2: 'Nam aliquam ultrices lectus, nec mattis quam dapibus in. Nulla faucibus, quam sit amet pretium auctor risus massa ultrices nisi, sed faucibus nulla ligula eget lectus. Praesent id nibh ullamcorper, condimentum nulla eget, auctor dui. In euismod enim et erat porttitor volutpa Suspendisse potenti. Cras at tempor metus. Morbi in semper sapien, in mattis sem.'
+homepage.cardContent3: 'Nam aliquam ultrices lectus, nec mattis quam dapibus in. Nulla faucibus, quam sit amet pretium auctor risus massa ultrices nisi, sed faucibus nulla ligula eget lectus. Praesent id nibh ullamcorper, condimentum nulla eget, auctor dui. In euismod enim et erat porttitor volutpa Suspendisse potenti. Cras at tempor metus. Morbi in semper sapien, in mattis sem.'
+homepage.button.knowMore: 'En savoir plus'
+homepage.banner: 'Réserver directement vos billets en ligne'
+homepage.link1: Billeterie
+homepage.cardTitle1: Actualités
+homepage.cardTitle2: Oeuvres
+homepage.cardTitle3: 'Le Palais'
+base.menuElt0: 'Musée du Louvre'
+base.menuElt1: Expositions
+base.menuElt2: Actualités
+base.menuElt3: Oeuvres
+base.menuElt4: 'Le Palais'
+base.menuElt5: Billeterie
+base.footerElt: '© 2018 Musée du Louvre - Projet Educatif'
+email.paragraph1: 'Ce mail contient vos billets d''entrée au Musée du Louvre.'
+email.paragraph2: 'Accès prioritaire depuis la Pyramide'
+email.paragraph3: 'Date de visite :'
+email.paragraph4: 'Référence de la commande :'
+email.paragraph5: 'Récapitulatif de votre commande :'
+email.labelName: Nom
+email.labelFirstName: Prénom
+email.labelBirthdate: 'Date de Naissance'
+email.labelPrice: 'Prix du billet'
+email.paragraph6: 'Pour le tarif réduit, un justificatif vous sera demandé.'
+email.paragraph7: 'En cas de problème vous pouvez joindre le service client à l''adresse suivante :'
+'email.labelName:': '__email.labelName:'

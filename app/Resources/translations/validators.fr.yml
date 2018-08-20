@@ -1,0 +1,6 @@
+'Les addresses ne correspondent pas.': nonono
+'constraint.TuesdayConstraint': 'Vous ne pouvez pas réserver de billet les Mardis.'
+'constraint.SundayConstraint': 'Vous ne pouvez pas réserver de billet les Dimanches.'
+'constraint.OpeningConstraint': 'Après 17h, vous ne pouvez plus réserver de billet pour la journée en cours.'
+'constraint.HalfdayConstraint': 'Vous ne pouvez malheuresement plus réserver de billet Journée après 14h.'
+'constraint.BankHolidaysConstraint': 'Vous ne pouvez pas réserver de billet un jour férié.'
