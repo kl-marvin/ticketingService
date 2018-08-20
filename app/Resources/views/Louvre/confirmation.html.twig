@@ -1,23 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} - Confirmation {% endblock %}
+{% block title %}{{ parent() }} - {% trans %}orderstep_4.title{% endtrans %}{% endblock %}
 
 {% block body %}
 
     <div id="thks"</div>
-    <h2 class="text-center">Le Musée du Louvre vous remercie pour votre commande.</h2><br>
+    <h2 class="text-center">{% trans %}orderstep_4.title1{% endtrans %}</h2><br>
 
     <div class="offset-lg-2 col-lg-8 offset-lg-2">
         <div class="card  text-center" id="encart1">
             <div class="card-body">
-                <p>Votre commande n°{{ booking.reference|upper }} est confirmée, les billets ont été envoyés à l'adresse suivante :</p>
+                <p>{% trans %}orderstep_4.paragraph1{% endtrans %}{{ booking.reference|upper }} {% trans %}orderstep_4.paragraph2{% endtrans %}</p>
                <p>{{ booking.email }}</p>
-                <a id="btnElt" class="btn btn-secondary offset-lg-8" href="{{ path('homepage') }}">Editer une facture</a><br>
+                <a id="btnElt" class="btn btn-secondary offset-lg-8" href="{{ path('homepage') }}">{% trans %}orderstep_4.link1{% endtrans %}</a><br>
                 <hr width="50%"><br><br>
-                <p>En cas de problème vous pouvez joindre le service client à l'adresse suivante :</p>
-                <p>serviceclient@louvre.com</p>
+                <p>{% trans %}orderstep_4.paragraph3{% endtrans %}</p>
+                <p>{% trans %}orderstep_4.paragraph4{% endtrans %}</p>
                 <br>
-                <a id="btnElt" class="btn btn-secondary offset-lg-8" href="{{ path('homepage') }}">Accueil</a>
+                <a id="btnElt" class="btn btn-secondary offset-lg-8" href="{{ path('homepage') }}">{% trans %}orderstep_4.link2{% endtrans %}</a>
 
             </div>
         </div>

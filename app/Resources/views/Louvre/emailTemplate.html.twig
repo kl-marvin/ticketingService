@@ -7,24 +7,24 @@
 <p style="font-size: 2em; text-align: center"><img src="https://image.flaticon.com/icons/svg/64/64050.svg" alt="logo musée du louvre" width="134" height="83" style="vertical-align: -20px"/> Musée du Louvre</p>
 
 
-<p style="font-size: 22px; color: #A32A2C;">Ce mail contient vos billets d'entrée au Musée du Louvre.</p>
-<p>Accès prioritaire depuis la Pyramide </p>
+<p style="font-size: 22px; color: #A32A2C;">{% trans %}email.paragraph1{% endtrans %}</p>
+<p>{% trans %}email.paragraph2{% endtrans %}</p>
 
-<span style="margin-right: 10px">Date de visite : {{ booking.visitDate|date("m/d/Y", "Europe/Paris") }} </span>
-<span>Référence de la commande : {{ booking.reference|upper }}</span>
+<span style="margin-right: 10px">{% trans %}email.paragraph3{% endtrans %} {{ booking.visitDate|date("m/d/Y", "Europe/Paris") }} </span>
+<span>{% trans %}email.paragraph4{% endtrans %}{{ booking.reference|upper }}</span>
 
 
 <hr style="width: 50%; margin-top: 25px;">
 
-<h3 style='color: #A32A2C;'>Récapitulatif de votre commande :</h3>
+<h3 style='color: #A32A2C;'>{% trans %}email.paragraph5{% endtrans %}</h3>
 
 <div style="margin-left: auto; margin-right: auto; width: 550px">
 <table>
     <tr>
-        <td style="padding-right: 10px; font-weight: bold">Nom</td>
-        <td style="padding-right: 10px; font-weight: bold">Prénom</td>
-        <td style="padding-right: 10px; font-weight: bold">Date de Naissance</td>
-        <td style="padding-right: 10px; font-weight: bold">Prix du billet</td>
+        <td style="padding-right: 10px; font-weight: bold">{% trans %}email.labelName:{% endtrans %}</td>
+        <td style="padding-right: 10px; font-weight: bold">{% trans %}email.labelFirstName{% endtrans %}</td>
+        <td style="padding-right: 10px; font-weight: bold">{% trans %}email.labelBirthdate{% endtrans %}</td>
+        <td style="padding-right: 10px; font-weight: bold">{% trans %}email.labelPrice{% endtrans %}</td>
     </tr>
     {% for ticket in booking.tickets %}
     <tr>
@@ -39,13 +39,13 @@
 
 </div>
 
-<h4>Pour le tarif réduit, un justificatif vous sera demandé.</h4>
+<h4>{% trans %}email.paragraph6{% endtrans %}</h4>
 
 <span>Prix total : </span><span style='color: #A32A2C; font-weight: bold'>{{ booking.totalPrice }},00 €</span>
 
 <hr style="margin-top: 45px;">
 
-<p>En cas de problème vous pouvez joindre le service client à l'adresse suivante :</p>
+<p>{% trans %}email.paragraph7{% endtrans %}</p>
 <p>serviceclient@louvre.com</p>
 
 

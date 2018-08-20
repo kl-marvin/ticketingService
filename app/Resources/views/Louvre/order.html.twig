@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
-{% block title %}{{ parent() }} - Commander {% endblock %}
+{% block title %}{{ parent() }} - {% trans %} orderstep_1.title {% endtrans %}  {% endblock %}
 
 
 {% block body %}
 
     <div class="offset-lg-2 mt-3">
-        <p>Le Musée est ouvert tous les jours de 9h à 18h, sauf le mardi (fermeture hebdomadaire) et le 1er Mai, le 1er
-            Novembre et le 25 Décembre.</p>
-        <p>La commande de billet est ligne est impossible :</p>
+        <p>{% trans %}orderstep_1.paragrah1{% endtrans %} </p>
+        <p>{% trans %}orderstep_1.paragraph2{% endtrans %} </p>
         <ul>
-            <li> Les Dimanches</li>
-            <li> Les jours feriés</li>
-            <li> Si plus de 1 000 billets ont déjà été vendus pour la journée en cours.</li>
+            <li>{% trans %}orderstep_1.listItem1{% endtrans %} </li>
+            <li> {% trans %}orderstep_1.listItem2{% endtrans %} </li>
+            <li>{% trans %}orderstep_1.listItem3{% endtrans %} </li>
         </ul>
 
-        <p>(Pour ces dates, veuillez vous rendre directement au Musée pour acheter vos billets.</p><br>
+        <p>{% trans %}orderstep_1.paragraph3{% endtrans %} </p><br>
     </div>
 
     <div class="card offset-lg-3 col-lg-6 offset-lg-3" id="orderElt">
@@ -26,23 +25,35 @@
                         {{ form_row(form.email) }}
                     </div>
                     <div class="form-group">
-                        {{ form_label(form.visitDate, "Choisissez la date de votre visite") }}
+                        {{ form_label(form.visitDate, "orderstep_1.action.choiceVisitDate"|trans) }}
                         {{ form_widget(form.visitDate, {'attr': {'class': 'form-control'}}) }}
                     </div>
 
                     <div><br>
 
-                        <p class="text-center">La commande de billet demi-journée permet d'accéder au Musée à partir de 14 heures seulement.</p>
-                        <p class="text-center">Elle est impossible pour la journée en cours, s'il il est plus de 14 heures.</p>
+                        <p class="text-center">{% trans %}orderstep_1.paragraph4{% endtrans %} </p>
+                        <p class="text-center">{% trans %}orderstep_1.paragraph5{% endtrans %} </p>
                     </div><br>
                     <hr>
 
                     <div class="form-group text-center">
-                        {{ form_label(form.type, "Type de billet") }}
+
+                        {{ form_label(form.type, "orderstep_1.action.choiceTicketType"|trans) }}
                         {{ form_widget(form.type, {'attr': {'class': 'browser-default'}}) }}
                     </div>
+                    <hr><br>
+                    <p class="text-center">{% trans %}orderstep_1.paragraph6{% endtrans %} </p>
+                    <div class="form-group text-center">
 
+                        {{ form_label(form.numberOfTickets, "orderstep_1.action.choiceNumberOfTicket"|trans) }}
+                        {{ form_widget(form.numberOfTickets, {'attr': {'class': 'browser-default'}}) }}
+                    </div>
 
+                    <div class="form-group text-center">
+
+                        {{ form_label(form.save, "orderstep_1.action.order"|trans) }}
+                        {{ form_widget(form.save, {'attr': {'class': 'btnEltform'}}) }}
+                    </div>
                 </div>
                 {{ form_end(form) }}
             </div>

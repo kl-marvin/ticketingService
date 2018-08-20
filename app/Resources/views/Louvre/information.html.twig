@@ -1,17 +1,16 @@
 {% extends 'base.html.twig' %}
-{% block title %}{{ parent() }} - Informations {% endblock %}
+{% block title %}{{ parent() }} - {% trans %}orderstep_2.title{% endtrans %}  {% endblock %}
 
 
 {% block body %}
 
 
     <div class="offset-lg-2 col-lg-8 col-lg-2 mt-3 text-center">
-        <p>Tarif normal: 16€</p>
-        <p>Tarif enfant : de 4 à 12 ans (8€)</p>
-        <p>Tarif senior: à partir de 60 ans (12€)</p>
-        <p>Tarif réduit: étudiant, employé du Musée, servicee du Ministère de la Culture, militaire sur présentation
-            d'un justificatif (10€)</p><br>
-        <p>Pour les enfants de moins de 4 ans, l'entrée est gratuite. Vous n'avez pas à réserver de billets.</p>
+        <p>{% trans %}orderstep_2.paragrah1{% endtrans %}</p>
+        <p>{% trans %}orderstep_2.paragrah2{% endtrans %} </p>
+        <p>{% trans %}orderstep_2.paragrah3{% endtrans %} </p>
+        <p>{% trans %}orderstep_2.paragrah4{% endtrans %} </p><br>
+        <p>{% trans %}orderstep_2.paragraph5{% endtrans %} </p>
     </div>
 
     <hr width="50%"><br>
@@ -23,32 +22,32 @@
             <div class="card-body">
                 <div id="form_booking">
                     <div class="form-group">
-                        {{ form_label(ticket.name, "Nom") }}
+                        {{ form_label(ticket.name, "orderstep_2.action.choiceName") }}
                         {{ form_widget(ticket.name, {'attr': {'class': 'form-control'}}) }}
                     </div>
                     <div class="form-group">
-                        {{ form_label(ticket.firstName, "Prénom") }}
+                        {{ form_label(ticket.firstName, "orderstep_2.action.choiceFirstName") }}
                         {{ form_widget(ticket.firstName, {'attr': {'class': 'form-control'}}) }}
                     </div>
                     <div class="form-group">
-                        {{ form_label(ticket.birthDate, "Date de Naissance") }}
+                        {{ form_label(ticket.birthDate, "orderstep_2.action.choiceBirthdate") }}
                         {{ form_widget(ticket.birthDate, {'attr': {'class': 'form-control'}}) }}
                     </div>
                     <div class="form-group">
-                        {{ form_label(ticket.country, "Pays de Résidence") }}
+                        {{ form_label(ticket.country, "orderstep_2.action.choiceCountry") }}
                         {{ form_widget(ticket.country, {'attr': {'class': 'form-control'}}) }}
                     </div>
 
                     <div class="text-center">
-                        {{ form_row(ticket.reducedPrice, { label:"Tarif réduit" }) }}
-                        <p>Un justificatif vous sera demandé.</p>
+                        {{ form_row(ticket.reducedPrice, { label:"orderstep_2.action.reduceprice"|trans }) }}
+                        <p>{% trans %}orderstep_2.paragraph6{% endtrans %} </p>
                     </div>
 
                 </div>
             </div>
         </div><br><br>
     {% endfor %}
-        <input type="submit" value="Réserver" class="btn btnEltform ">
+        <input type="submit" value="Réserver" class="btn btnEltform">
     {{ form_end(form) }}
     </div><br>
 

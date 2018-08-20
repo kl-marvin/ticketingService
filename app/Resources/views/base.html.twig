@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale }}">
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}Musée du Louvre{% endblock %}</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
@@ -14,20 +15,44 @@
 <header>
     <!-- Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img class="navbar-brand" src="{{ asset('img/louvre-pyramid.png') }}" width="40px" ">
-        <a class="navbar-brand" href="{{ path('homepage') }}">Musée du Louvre</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <img class="navbar-brand" src="{{ asset('img/louvre-pyramid.png') }}" width="40px">
+        <a class="navbar-brand" href="{{ path('homepage',{_locale: 'en'}) }}">{% trans %}base.menuElt0{% endtrans %}</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a id="link" class="nav-item nav-link" href="#">Expositions</a>
-                <a id="link" class="nav-item nav-link" href="#">Actualités</a>
-                <a id="link" class="nav-item nav-link" href="#">Oeuvres</a>
-                <a id="link" class="nav-item nav-link" href="#">Le Palais</a>
-                <a id="linkBilleterie" class="nav-item nav-link " href="{{ path('order_step_1') }}">Billeterie</a>
+                <a id="link" class="nav-item nav-link" href="#">{% trans %}base.menuElt1{% endtrans %}</a>
+                <a id="link" class="nav-item nav-link" href="#">{% trans %}base.menuElt2{% endtrans %}</a>
+                <a id="link" class="nav-item nav-link" href="#">{% trans %}base.menuElt3{% endtrans %}</a>
+                <a id="link" class="nav-item nav-link" href="#">{% trans %}base.menuElt4{% endtrans %}</a>
+                <a id="linkBilleterie" class="nav-item nav-link" href="{{ path('order_step_1') }}">{% trans %}base.menuElt5{% endtrans %}</a>
 
 
+                   </div>
             </div>
-        </div>
     </nav>
+
+
+        <div class="btn-group dropright" id="traductionElt">
+      <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="z-index: 3; position: fixed; border-radius: 1px 7px 7px 1px;" >
+      <img src="{{ asset('img/trad.png') }}" alt="" height="25">
+      </button>
+      <div class="dropdown-menu" style="min-width: 65px !important; height: 45px !important; padding-left:5px">
+        <!-- Dropdown menu links -->
+
+                <a href="{{ path(app.request.attributes.get('_route'),{_locale: 'fr'}) }}"><img
+                            src="{{ asset('img/france.png') }}" alt="frenchflag"></a>
+
+                <a href="{{ path(app.request.attributes.get('_route'),{_locale: 'en'}) }}"><img
+                            src="{{ asset('img/united-kingdom.png') }}" alt="britishflag"></a>
+
+
+      </div>
+
+
+
 </header>
 
 {% for label, messages in app.flashes %}
@@ -37,17 +62,27 @@
         </div>
     {% endfor %}
 {% endfor %}
+
 {% block body %}
 {% endblock %}
 
-
-</body>
 <!-- Footer-->
 <footer>
     <nav class="text-center">
-        <div id="footerelt" class="bg-dark text-white footer-text">© 2018 Musée du Louvre - Projet Educatif</div>
+        <div id="footerelt" class="bg-dark text-white footer-text">{% trans %}base.footerElt{% endtrans %}</div>
     </nav>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+        integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
 
+
+</body>
 </html>
