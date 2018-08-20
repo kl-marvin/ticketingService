@@ -11,5 +11,5 @@ use Symfony\Component\Validator\Constraint;
  */
 class BankHolidays extends Constraint
 {
-    public $message = "Vous ne pouvez pas réserver de billet lors d'un jour férié. ";
+    public $message = "constraint.BankHolidaysConstraint";
 }

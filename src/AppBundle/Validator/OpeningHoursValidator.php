@@ -11,13 +11,13 @@ class OpeningHoursValidator extends ConstraintValidator
 
     const CLOSINGTIME = 17;
 
-    public function validate($booking, Constraint $constraint)
+    public function validate($date, Constraint $constraint)
     {
-        if ($booking ==! null){
-            $visitDate = $booking->getVisitDate()->format('Y-m-d');
-            $bookingDate = new \DateTime();
-            $bookingDate->format('Y-m-d');
-            $bookinghour = $bookingDate->format('H');
+        if ($date ==! null){
+            $visitDate = $date->format('Y-m-d');
+            $now = new \DateTime();
+            $bookingDate = $now->format('Y-m-d');
+            $bookinghour = $now->format('H');
 
             if ($bookinghour >= self::CLOSINGTIME && $visitDate === $bookingDate) {
                 $this->context->buildViolation($constraint->message)->addViolation();
