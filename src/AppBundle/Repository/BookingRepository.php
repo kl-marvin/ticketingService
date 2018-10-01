@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use Doctrine\ORM\EntityRepository;
+
 /**
  * BookingRepository
  *
@@ -10,4 +12,22 @@ namespace AppBundle\Repository;
  */
 class BookingRepository extends \Doctrine\ORM\EntityRepository
 {
+
+  /**
+  *  @param \Datetime $date
+  *  @return integer
+  **/
+  public function countHowManyDailyTicket(\Datetime $date)
+  {
+
+    $query = $this->createQueryBuilder('b')
+        ->select('COUNT(t)') // revoir cours doctrine COUNT
+        ->where('b.visitDate = :visitDate')
+        ->setParameter('visitDate', $date)
+        ->innerJoin('b.tickets','t')
+        ->getQuery();
+
+    return $query->getSingleScalarResult();
+
+  }
 }
