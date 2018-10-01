@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /Applications/MAMP/htdocs/www/Projet4/src/AppBundle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href=".css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href=".css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href=".css/style.css" rel="stylesheet" type="text/css">
+  <link href=".css/custom.css" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]>
+  <script src=".js/html5shiv.min.js"></script>
+  <script src=".js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">/Applications/MAMP/htdocs/www/Projet4/src/AppBundle</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/DefaultController.php.html#20">AppBundle\Controller\DefaultController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#16">AppBundle\Entity\Booking</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#13">AppBundle\Entity\Ticket</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/BookingTicketsType.php.html#19">AppBundle\Form\BookingTicketsType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/BookingType.php.html#19">AppBundle\Form\BookingType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/TicketType.php.html#14">AppBundle\Form\TicketType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#19">AppBundle\Manager\BookingManager</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/MailService.php.html#7">AppBundle\Service\MailService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/PaiementService.php.html#13">AppBundle\Service\PaiementService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/BankHolidaysValidator.php.html#9">AppBundle\Validator\BankHolidaysValidator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/HalfdayBooking.php.html#13">AppBundle\Validator\HalfdayBooking</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/HalfdayBookingValidator.php.html#12">AppBundle\Validator\HalfdayBookingValidator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/OpeningHoursValidator.php.html#9">AppBundle\Validator\OpeningHoursValidator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/SundaysClosingValidator.php.html#9">AppBundle\Validator\SundaysClosingValidator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/TuesdaysClosingValidator.php.html#8">AppBundle\Validator\TuesdaysClosingValidator</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Manager/BookingManager.php.html#19">AppBundle\Manager\BookingManager</a></td><td class="text-right">342</td></tr>
+       <tr><td><a href="Controller/DefaultController.php.html#20">AppBundle\Controller\DefaultController</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Validator/BankHolidaysValidator.php.html#9">AppBundle\Validator\BankHolidaysValidator</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Validator/HalfdayBookingValidator.php.html#12">AppBundle\Validator\HalfdayBookingValidator</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Service/PaiementService.php.html#13">AppBundle\Service\PaiementService</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Validator/OpeningHoursValidator.php.html#9">AppBundle\Validator\OpeningHoursValidator</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Validator/SundaysClosingValidator.php.html#9">AppBundle\Validator\SundaysClosingValidator</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Validator/TuesdaysClosingValidator.php.html#8">AppBundle\Validator\TuesdaysClosingValidator</a></td><td class="text-right">12</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/DefaultController.php.html#25"><abbr title="AppBundle\Controller\DefaultController::indexAction">indexAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/BookingTicketsType.php.html#37"><abbr title="AppBundle\Form\BookingTicketsType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#73"><abbr title="AppBundle\Manager\BookingManager::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/TicketType.php.html#52"><abbr title="AppBundle\Form\TicketType::getBlockPrefix">getBlockPrefix</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/TicketType.php.html#42"><abbr title="AppBundle\Form\TicketType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/TicketType.php.html#19"><abbr title="AppBundle\Form\TicketType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/BookingType.php.html#64"><abbr title="AppBundle\Form\BookingType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/BookingType.php.html#24"><abbr title="AppBundle\Form\BookingType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/BookingTicketsType.php.html#24"><abbr title="AppBundle\Form\BookingTicketsType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#96"><abbr title="AppBundle\Manager\BookingManager::generateTicketsForBooking">generateTicketsForBooking</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#256"><abbr title="AppBundle\Entity\Ticket::getAge">getAge</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#250"><abbr title="AppBundle\Entity\Ticket::getReducedPrice">getReducedPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#240"><abbr title="AppBundle\Entity\Ticket::setReducedPrice">setReducedPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#232"><abbr title="AppBundle\Entity\Ticket::isReducedPrice">isReducedPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#224"><abbr title="AppBundle\Entity\Ticket::getPrice">getPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#212"><abbr title="AppBundle\Entity\Ticket::setPrice">setPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#84"><abbr title="AppBundle\Manager\BookingManager::initializeBooking">initializeBooking</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#107"><abbr title="AppBundle\Manager\BookingManager::getCurrentBooking">getCurrentBooking</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#188"><abbr title="AppBundle\Entity\Ticket::setCountry">setCountry</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/PaiementService.php.html#30"><abbr title="AppBundle\Service\PaiementService::bookingCheckout">bookingCheckout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/SundaysClosingValidator.php.html#13"><abbr title="AppBundle\Validator\SundaysClosingValidator::validate">validate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/OpeningHoursValidator.php.html#14"><abbr title="AppBundle\Validator\OpeningHoursValidator::validate">validate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/HalfdayBookingValidator.php.html#17"><abbr title="AppBundle\Validator\HalfdayBookingValidator::validate">validate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/HalfdayBooking.php.html#18"><abbr title="AppBundle\Validator\HalfdayBooking::getTargets">getTargets</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/BankHolidaysValidator.php.html#48"><abbr title="AppBundle\Validator\BankHolidaysValidator::validate">validate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/BankHolidaysValidator.php.html#12"><abbr title="AppBundle\Validator\BankHolidaysValidator::getHolidays">getHolidays</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/PaiementService.php.html#22"><abbr title="AppBundle\Service\PaiementService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#119"><abbr title="AppBundle\Manager\BookingManager::computePrice">computePrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/MailService.php.html#25"><abbr title="AppBundle\Service\MailService::sendBookingConfirmation">sendBookingConfirmation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Service/MailService.php.html#18"><abbr title="AppBundle\Service\MailService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#182"><abbr title="AppBundle\Manager\BookingManager::paiement">paiement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#176"><abbr title="AppBundle\Manager\BookingManager::save">save</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#169"><abbr title="AppBundle\Manager\BookingManager::sendEmail">sendEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#156"><abbr title="AppBundle\Manager\BookingManager::computeReference">computeReference</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#200"><abbr title="AppBundle\Entity\Ticket::getCountry">getCountry</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#176"><abbr title="AppBundle\Entity\Ticket::getBirthDate">getBirthDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/DefaultController.php.html#37"><abbr title="AppBundle\Controller\DefaultController::orderAction">orderAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#158"><abbr title="AppBundle\Entity\Booking::getFirstName">getFirstName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#230"><abbr title="AppBundle\Entity\Booking::getType">getType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#218"><abbr title="AppBundle\Entity\Booking::setType">setType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#206"><abbr title="AppBundle\Entity\Booking::getVisitDate">getVisitDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#194"><abbr title="AppBundle\Entity\Booking::setVisitDate">setVisitDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#182"><abbr title="AppBundle\Entity\Booking::getDate">getDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#170"><abbr title="AppBundle\Entity\Booking::setDate">setDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#146"><abbr title="AppBundle\Entity\Booking::setFirstName">setFirstName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#254"><abbr title="AppBundle\Entity\Booking::getEmail">getEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#134"><abbr title="AppBundle\Entity\Booking::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#122"><abbr title="AppBundle\Entity\Booking::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#110"><abbr title="AppBundle\Entity\Booking::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/DefaultController.php.html#107"><abbr title="AppBundle\Controller\DefaultController::confirmationAction">confirmationAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/DefaultController.php.html#86"><abbr title="AppBundle\Controller\DefaultController::checkoutAction">checkoutAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/DefaultController.php.html#63"><abbr title="AppBundle\Controller\DefaultController::informationAction">informationAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#242"><abbr title="AppBundle\Entity\Booking::setEmail">setEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#267"><abbr title="AppBundle\Entity\Booking::setReference">setReference</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#164"><abbr title="AppBundle\Entity\Ticket::setBirthDate">setBirthDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#80"><abbr title="AppBundle\Entity\Ticket::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#152"><abbr title="AppBundle\Entity\Ticket::getFirstName">getFirstName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#140"><abbr title="AppBundle\Entity\Ticket::setFirstName">setFirstName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#128"><abbr title="AppBundle\Entity\Ticket::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#116"><abbr title="AppBundle\Entity\Ticket::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#104"><abbr title="AppBundle\Entity\Ticket::getBooking">getBooking</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Ticket.php.html#92"><abbr title="AppBundle\Entity\Ticket::setBooking">setBooking</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#363"><abbr title="AppBundle\Entity\Booking::getTotalPrice">getTotalPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#281"><abbr title="AppBundle\Entity\Booking::getReference">getReference</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#351"><abbr title="AppBundle\Entity\Booking::setTotalPrice">setTotalPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#339"><abbr title="AppBundle\Entity\Booking::getTickets">getTickets</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#329"><abbr title="AppBundle\Entity\Booking::removeTicket">removeTicket</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#316"><abbr title="AppBundle\Entity\Booking::addTicket">addTicket</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#304"><abbr title="AppBundle\Entity\Booking::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#297"><abbr title="AppBundle\Entity\Booking::setNumberOfTickets">setNumberOfTickets</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Booking.php.html#289"><abbr title="AppBundle\Entity\Booking::getNumberOfTickets">getNumberOfTickets</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validator/TuesdaysClosingValidator.php.html#12"><abbr title="AppBundle\Validator\TuesdaysClosingValidator::validate">validate</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Manager/BookingManager.php.html#119"><abbr title="AppBundle\Manager\BookingManager::computePrice">computePrice</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Validator/HalfdayBookingValidator.php.html#17"><abbr title="AppBundle\Validator\HalfdayBookingValidator::validate">validate</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Validator/BankHolidaysValidator.php.html#48"><abbr title="AppBundle\Validator\BankHolidaysValidator::validate">validate</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Validator/OpeningHoursValidator.php.html#14"><abbr title="AppBundle\Validator\OpeningHoursValidator::validate">validate</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Controller/DefaultController.php.html#37"><abbr title="AppBundle\Controller\DefaultController::orderAction">orderAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/DefaultController.php.html#63"><abbr title="AppBundle\Controller\DefaultController::informationAction">informationAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Service/PaiementService.php.html#30"><abbr title="AppBundle\Service\PaiementService::bookingCheckout">bookingCheckout</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Validator/SundaysClosingValidator.php.html#13"><abbr title="AppBundle\Validator\SundaysClosingValidator::validate">validate</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Validator/TuesdaysClosingValidator.php.html#12"><abbr title="AppBundle\Validator\TuesdaysClosingValidator::validate">validate</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/DefaultController.php.html#86"><abbr title="AppBundle\Controller\DefaultController::checkoutAction">checkoutAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#96"><abbr title="AppBundle\Manager\BookingManager::generateTicketsForBooking">generateTicketsForBooking</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Manager/BookingManager.php.html#182"><abbr title="AppBundle\Manager\BookingManager::paiement">paiement</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Validator/BankHolidaysValidator.php.html#12"><abbr title="AppBundle\Validator\BankHolidaysValidator::getHolidays">getHolidays</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 6.0.7</a> using <a href="https://secure.php.net/" target="_top">PHP 7.2.9</a> with <a href="https://xdebug.org/">Xdebug 2.6.1</a> and <a href="https://phpunit.de/">PHPUnit 7.3.3</a> at Wed Sep 5 5:27:57 UTC 2018.</small>
+    </p>
+   </footer>
+  </div>
+  <script src=".js/jquery.min.js" type="text/javascript"></script>
+  <script src=".js/bootstrap.min.js" type="text/javascript"></script>
+  <script src=".js/holder.min.js" type="text/javascript"></script>
+  <script src=".js/d3.min.js" type="text/javascript"></script>
+  <script src=".js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([15,0,0,0,0,0,0,0,0,0,0,7], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([72,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[100,0,"<a href=\"AppBundle.php.html#7\">AppBundle\\AppBundle<\/a>"],[0,10,"<a href=\"Controller\/DefaultController.php.html#20\">AppBundle\\Controller\\DefaultController<\/a>"],[0,23,"<a href=\"Entity\/Booking.php.html#16\">AppBundle\\Entity\\Booking<\/a>"],[0,17,"<a href=\"Entity\/Ticket.php.html#13\">AppBundle\\Entity\\Ticket<\/a>"],[0,2,"<a href=\"Form\/BookingTicketsType.php.html#19\">AppBundle\\Form\\BookingTicketsType<\/a>"],[0,2,"<a href=\"Form\/BookingType.php.html#19\">AppBundle\\Form\\BookingType<\/a>"],[0,3,"<a href=\"Form\/TicketType.php.html#14\">AppBundle\\Form\\TicketType<\/a>"],[0,18,"<a href=\"Manager\/BookingManager.php.html#19\">AppBundle\\Manager\\BookingManager<\/a>"],[100,0,"<a href=\"Repository\/BookingRepository.php.html#11\">AppBundle\\Repository\\BookingRepository<\/a>"],[100,0,"<a href=\"Repository\/TicketRepository.php.html#11\">AppBundle\\Repository\\TicketRepository<\/a>"],[0,2,"<a href=\"Service\/MailService.php.html#7\">AppBundle\\Service\\MailService<\/a>"],[0,4,"<a href=\"Service\/PaiementService.php.html#13\">AppBundle\\Service\\PaiementService<\/a>"],[100,0,"<a href=\"Validator\/BankHolidays.php.html#12\">AppBundle\\Validator\\BankHolidays<\/a>"],[0,6,"<a href=\"Validator\/BankHolidaysValidator.php.html#9\">AppBundle\\Validator\\BankHolidaysValidator<\/a>"],[0,1,"<a href=\"Validator\/HalfdayBooking.php.html#13\">AppBundle\\Validator\\HalfdayBooking<\/a>"],[0,5,"<a href=\"Validator\/HalfdayBookingValidator.php.html#12\">AppBundle\\Validator\\HalfdayBookingValidator<\/a>"],[100,0,"<a href=\"Validator\/OpeningHours.php.html#13\">AppBundle\\Validator\\OpeningHours<\/a>"],[0,4,"<a href=\"Validator\/OpeningHoursValidator.php.html#9\">AppBundle\\Validator\\OpeningHoursValidator<\/a>"],[100,0,"<a href=\"Validator\/SundaysClosing.php.html#13\">AppBundle\\Validator\\SundaysClosing<\/a>"],[0,3,"<a href=\"Validator\/SundaysClosingValidator.php.html#9\">AppBundle\\Validator\\SundaysClosingValidator<\/a>"],[100,0,"<a href=\"Validator\/TuesdaysClosing.php.html#14\">AppBundle\\Validator\\TuesdaysClosing<\/a>"],[0,3,"<a href=\"Validator\/TuesdaysClosingValidator.php.html#8\">AppBundle\\Validator\\TuesdaysClosingValidator<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Controller\/DefaultController.php.html#25\">AppBundle\\Controller\\DefaultController::indexAction<\/a>"],[0,3,"<a href=\"Controller\/DefaultController.php.html#37\">AppBundle\\Controller\\DefaultController::orderAction<\/a>"],[0,3,"<a href=\"Controller\/DefaultController.php.html#63\">AppBundle\\Controller\\DefaultController::informationAction<\/a>"],[0,2,"<a href=\"Controller\/DefaultController.php.html#86\">AppBundle\\Controller\\DefaultController::checkoutAction<\/a>"],[0,1,"<a href=\"Controller\/DefaultController.php.html#107\">AppBundle\\Controller\\DefaultController::confirmationAction<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#110\">AppBundle\\Entity\\Booking::getId<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#122\">AppBundle\\Entity\\Booking::setName<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#134\">AppBundle\\Entity\\Booking::getName<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#146\">AppBundle\\Entity\\Booking::setFirstName<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#158\">AppBundle\\Entity\\Booking::getFirstName<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#170\">AppBundle\\Entity\\Booking::setDate<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#182\">AppBundle\\Entity\\Booking::getDate<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#194\">AppBundle\\Entity\\Booking::setVisitDate<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#206\">AppBundle\\Entity\\Booking::getVisitDate<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#218\">AppBundle\\Entity\\Booking::setType<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#230\">AppBundle\\Entity\\Booking::getType<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#242\">AppBundle\\Entity\\Booking::setEmail<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#254\">AppBundle\\Entity\\Booking::getEmail<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#267\">AppBundle\\Entity\\Booking::setReference<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#281\">AppBundle\\Entity\\Booking::getReference<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#289\">AppBundle\\Entity\\Booking::getNumberOfTickets<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#297\">AppBundle\\Entity\\Booking::setNumberOfTickets<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#304\">AppBundle\\Entity\\Booking::__construct<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#316\">AppBundle\\Entity\\Booking::addTicket<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#329\">AppBundle\\Entity\\Booking::removeTicket<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#339\">AppBundle\\Entity\\Booking::getTickets<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#351\">AppBundle\\Entity\\Booking::setTotalPrice<\/a>"],[0,1,"<a href=\"Entity\/Booking.php.html#363\">AppBundle\\Entity\\Booking::getTotalPrice<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#80\">AppBundle\\Entity\\Ticket::getId<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#92\">AppBundle\\Entity\\Ticket::setBooking<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#104\">AppBundle\\Entity\\Ticket::getBooking<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#116\">AppBundle\\Entity\\Ticket::setName<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#128\">AppBundle\\Entity\\Ticket::getName<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#140\">AppBundle\\Entity\\Ticket::setFirstName<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#152\">AppBundle\\Entity\\Ticket::getFirstName<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#164\">AppBundle\\Entity\\Ticket::setBirthDate<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#176\">AppBundle\\Entity\\Ticket::getBirthDate<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#188\">AppBundle\\Entity\\Ticket::setCountry<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#200\">AppBundle\\Entity\\Ticket::getCountry<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#212\">AppBundle\\Entity\\Ticket::setPrice<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#224\">AppBundle\\Entity\\Ticket::getPrice<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#232\">AppBundle\\Entity\\Ticket::isReducedPrice<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#240\">AppBundle\\Entity\\Ticket::setReducedPrice<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#250\">AppBundle\\Entity\\Ticket::getReducedPrice<\/a>"],[0,1,"<a href=\"Entity\/Ticket.php.html#256\">AppBundle\\Entity\\Ticket::getAge<\/a>"],[0,1,"<a href=\"Form\/BookingTicketsType.php.html#24\">AppBundle\\Form\\BookingTicketsType::buildForm<\/a>"],[0,1,"<a href=\"Form\/BookingTicketsType.php.html#37\">AppBundle\\Form\\BookingTicketsType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/BookingType.php.html#24\">AppBundle\\Form\\BookingType::buildForm<\/a>"],[0,1,"<a href=\"Form\/BookingType.php.html#64\">AppBundle\\Form\\BookingType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/TicketType.php.html#19\">AppBundle\\Form\\TicketType::buildForm<\/a>"],[0,1,"<a href=\"Form\/TicketType.php.html#42\">AppBundle\\Form\\TicketType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/TicketType.php.html#52\">AppBundle\\Form\\TicketType::getBlockPrefix<\/a>"],[0,1,"<a href=\"Manager\/BookingManager.php.html#73\">AppBundle\\Manager\\BookingManager::__construct<\/a>"],[0,1,"<a href=\"Manager\/BookingManager.php.html#84\">AppBundle\\Manager\\BookingManager::initializeBooking<\/a>"],[0,2,"<a href=\"Manager\/BookingManager.php.html#96\">AppBundle\\Manager\\BookingManager::generateTicketsForBooking<\/a>"],[0,1,"<a href=\"Manager\/BookingManager.php.html#107\">AppBundle\\Manager\\BookingManager::getCurrentBooking<\/a>"],[0,8,"<a href=\"Manager\/BookingManager.php.html#119\">AppBundle\\Manager\\BookingManager::computePrice<\/a>"],[0,1,"<a href=\"Manager\/BookingManager.php.html#156\">AppBundle\\Manager\\BookingManager::computeReference<\/a>"],[0,1,"<a href=\"Manager\/BookingManager.php.html#169\">AppBundle\\Manager\\BookingManager::sendEmail<\/a>"],[0,1,"<a href=\"Manager\/BookingManager.php.html#176\">AppBundle\\Manager\\BookingManager::save<\/a>"],[0,2,"<a href=\"Manager\/BookingManager.php.html#182\">AppBundle\\Manager\\BookingManager::paiement<\/a>"],[0,1,"<a href=\"Service\/MailService.php.html#18\">AppBundle\\Service\\MailService::__construct<\/a>"],[0,1,"<a href=\"Service\/MailService.php.html#25\">AppBundle\\Service\\MailService::sendBookingConfirmation<\/a>"],[0,1,"<a href=\"Service\/PaiementService.php.html#22\">AppBundle\\Service\\PaiementService::__construct<\/a>"],[0,3,"<a href=\"Service\/PaiementService.php.html#30\">AppBundle\\Service\\PaiementService::bookingCheckout<\/a>"],[0,2,"<a href=\"Validator\/BankHolidaysValidator.php.html#12\">AppBundle\\Validator\\BankHolidaysValidator::getHolidays<\/a>"],[0,4,"<a href=\"Validator\/BankHolidaysValidator.php.html#48\">AppBundle\\Validator\\BankHolidaysValidator::validate<\/a>"],[0,1,"<a href=\"Validator\/HalfdayBooking.php.html#18\">AppBundle\\Validator\\HalfdayBooking::getTargets<\/a>"],[0,5,"<a href=\"Validator\/HalfdayBookingValidator.php.html#17\">AppBundle\\Validator\\HalfdayBookingValidator::validate<\/a>"],[0,4,"<a href=\"Validator\/OpeningHoursValidator.php.html#14\">AppBundle\\Validator\\OpeningHoursValidator::validate<\/a>"],[0,3,"<a href=\"Validator\/SundaysClosingValidator.php.html#13\">AppBundle\\Validator\\SundaysClosingValidator::validate<\/a>"],[0,3,"<a href=\"Validator\/TuesdaysClosingValidator.php.html#12\">AppBundle\\Validator\\TuesdaysClosingValidator::validate<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
