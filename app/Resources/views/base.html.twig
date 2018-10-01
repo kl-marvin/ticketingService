@@ -36,7 +36,7 @@
 
 
         <div class="btn-group dropright" id="traductionElt">
-      <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="z-index: 3; position: fixed; border-radius: 1px 7px 7px 1px;" >
+      <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <img src="{{ asset('img/trad.png') }}" alt="" height="25">
       </button>
       <div class="dropdown-menu" style="min-width: 65px !important; height: 45px !important; padding-left:5px">
@@ -50,7 +50,7 @@
 
 
       </div>
-
+    </div>
 
 
 </header>
@@ -58,7 +58,7 @@
 {% for label, messages in app.flashes %}
     {% for message in messages %}
         <div class="alert alert-{{ label }}">
-            {{ message }}
+            {{ message|trans }}
         </div>
     {% endfor %}
 {% endfor %}

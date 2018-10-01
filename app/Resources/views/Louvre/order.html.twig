@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <div class="offset-lg-2 mt-3">
+    <div class="offset-lg-2 mt-5">
         <p>{% trans %}orderstep_1.paragrah1{% endtrans %} </p>
         <p>{% trans %}orderstep_1.paragraph2{% endtrans %} </p>
         <ul>
@@ -21,6 +21,7 @@
             <div class="form offset-lg-1 col-lg-10 offset-lg-1">
                 {{ form_start(form) }}
                 <div id="form_booking">
+                {{ form_errors(form)}}
                     <div>
                         {{ form_row(form.email) }}
                     </div>

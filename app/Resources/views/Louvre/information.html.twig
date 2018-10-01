@@ -47,7 +47,9 @@
             </div>
         </div><br><br>
     {% endfor %}
-        <input type="submit" value="Réserver" class="btn btnEltform">
+      <div class="text-center">
+        <input type="submit" value="{% trans %}orderstep_2.button{% endtrans %}" class="btn btnEltform">
+      </div>
     {{ form_end(form) }}
     </div><br>
 
