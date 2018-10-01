@@ -2,19 +2,15 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Ticket;
+use AppBundle\Exception\InvalidCurrentBooking;
+use AppBundle\Exception\NoCurrentBookingException;
 use AppBundle\Form\BookingTicketsType;
-use AppBundle\Form\TicketType;
+use AppBundle\Form\BookingType;
 use AppBundle\Manager\BookingManager;
-use AppBundle\Repository\BookingRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Stripe\Error\Card;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use AppBundle\Entity\Booking;
-use AppBundle\Form\BookingType;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 
 class DefaultController extends Controller
@@ -59,11 +55,14 @@ class DefaultController extends Controller
 
     /**
      * @Route("/information", name="order_step_2")
+     *
+     * @throws InvalidCurrentBooking
+     * @throws NoCurrentBookingException
      */
     public function informationAction(Request $request, BookingManager $bookingManager)
     {
 
-        $booking = $bookingManager->getCurrentBooking();
+        $booking = $bookingManager->getCurrentBooking(['init']);
 
         $form = $this->createForm(BookingTicketsType::class, $booking);
         $form->handleRequest($request);
@@ -82,14 +81,15 @@ class DefaultController extends Controller
 
     /**
      * @Route("/checkout", name="order_step_3")
+     * @throws InvalidCurrentBooking
+     * @throws NoCurrentBookingException
      */
     public function checkoutAction(BookingManager $bookingManager)
     {
-        $booking = $bookingManager->getCurrentBooking();
+        $booking = $bookingManager->getCurrentBooking(['init', 'info']);
 
-        if($bookingManager->paiement($booking))
-        {
-            $this->addFlash('success', 'Commande effectuée');
+        if ($bookingManager->paiement($booking)) {
+            $this->addFlash('success', 'Commande validée !');
             return $this->redirectToRoute("order_step_4");
         }
 
@@ -103,14 +103,14 @@ class DefaultController extends Controller
 
     /**
      * @Route("/confirmation", name="order_step_4")
+     * @throws InvalidCurrentBooking
+     * @throws NoCurrentBookingException
      */
     public function confirmationAction(BookingManager $bookingManager)
     {
-        $booking = $bookingManager->getCurrentBooking();
-        // TODO vider session
-       //  $booking = $session->remove('booking');
+        $booking = $bookingManager->getCurrentBooking(['init', 'info']);
+        $bookingManager->removeCurrentBooking();
 
-        dump($booking);
         return $this->render('Louvre/confirmation.html.twig', array(
             'booking' => $booking,
         ));
