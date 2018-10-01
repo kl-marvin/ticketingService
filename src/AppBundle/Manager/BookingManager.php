@@ -15,6 +15,10 @@ use AppBundle\Service\MailService;
 use AppBundle\Service\PaiementService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use AppBundle\Exception\InvalidCurrentBooking;
+use AppBundle\Exception\NoCurrentBookingException;
 
 class BookingManager
 {
@@ -65,17 +69,24 @@ class BookingManager
      */
     private $mailService;
 
+
+/**
+* @var ValidatorInterface
+**/
+    private $validator;
+
     /**
      * BookingManager constructor.
      * @param SessionInterface $session
      * @param EntityManagerInterface $entityManager
      */
-    public function __construct(SessionInterface $session, EntityManagerInterface $entityManager, PaiementService $paiementService, MailService $mailService)
+    public function __construct(SessionInterface $session, EntityManagerInterface $entityManager, PaiementService $paiementService, MailService $mailService, ValidatorInterface $ValidatorInterface)
     {
         $this->session = $session;
         $this->entityManager = $entityManager;
         $this->paiementService = $paiementService;
         $this->mailService = $mailService;
+        $this->validator = $ValidatorInterface;
     }
 
     /**
@@ -103,12 +114,22 @@ class BookingManager
 
     /**
      * @return Booking
+     * @throws NoCurrentBookingException
+     * @throws InvalidCurrentBooking
      */
-    public function getCurrentBooking()
+    public function getCurrentBooking(array $steps)
     {
         $booking = $this->session->get('booking');
 
-        // lever une exception si pas de booking en session
+        if(!$booking instanceof Booking){
+          throw new NoCurrentBookingException("No current booking");
+        }
+
+        if(count($this->validator->validate($booking,null,$steps))){
+          throw new InvalidCurrentBooking("No current booking");
+        };
+
+
         return $booking;
     }
 
@@ -169,8 +190,6 @@ class BookingManager
     public function sendEmail(Booking $booking, \Swift_Mailer $mailer, $html)
     {
 
-
-
     }
 
     public function save($booking)
@@ -185,11 +204,16 @@ class BookingManager
         if($reference !== false){
             $booking->setReference($reference);
             $this->mailService->sendBookingConfirmation($booking);
-            //$this->$this->save($booking);
+            $this->save($booking);
             return true;
         }
         return false;
 
+    }
+
+    public function removeCurrentBooking()
+    {
+      $this->session->remove('booking');
     }
 
 
