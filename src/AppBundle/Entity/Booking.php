@@ -11,7 +11,8 @@ use AppBundle\Validator as LouvreAssert;
  *
  * @ORM\Table(name="booking")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\BookingRepository")
- * @LouvreAssert\HalfdayBooking()
+ * @LouvreAssert\SoldOut(groups={"init"})
+ * @LouvreAssert\HalfdayBooking(groups={"init"})
  */
 class Booking
 {
@@ -50,12 +51,12 @@ class Booking
 
     /**
      * @var \DateTime
-     * @Assert\DateTime()
+     * @Assert\DateTime(groups={"init"})
      * @Assert\GreaterThanOrEqual("today")
-     * @LouvreAssert\TuesdaysClosing()
-     * @LouvreAssert\SundaysClosing()
-     * @LouvreAssert\BankHolidays()
-     * @LouvreAssert\OpeningHours()
+     * @LouvreAssert\TuesdaysClosing(groups={"init"})
+     * @LouvreAssert\SundaysClosing(groups={"init"})
+     * @LouvreAssert\BankHolidays(groups={"init"})
+     * @LouvreAssert\OpeningHours(groups={"init"})
      * @ORM\Column(name="visitDate", type="datetime")
      */
     private $visitDate;
@@ -69,14 +70,15 @@ class Booking
 
     /**
      * @var string
-     * @Assert\Email()
+     * @Assert\Email(groups={"init"})
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
 
     /**
      * @var int
-     *
+     * @Assert\Count(min=1, groups={"info"})
+     * @Assert\Valid(groups={"info"})
      * @ORM\OneToMany(targetEntity="Ticket", mappedBy="booking", cascade={"persist"})
      */
     private $tickets;
