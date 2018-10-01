@@ -22,9 +22,16 @@ class MailService
     }
 
 
+    /**
+     * @param Booking $booking
+     * @return int
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
     public function sendBookingConfirmation(Booking $booking)
     {
-        $htlm =  /// ;
+
         $message = (new \Swift_Message('Confirmation de Commande Numéro : ' . $booking->getReference()))
             ->setFrom('service.billeterie@louvre.com')
             ->setTo($booking->getEmail())

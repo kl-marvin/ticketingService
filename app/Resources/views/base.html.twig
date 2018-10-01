@@ -63,11 +63,12 @@
     {% endfor %}
 {% endfor %}
 
+<div class="mainBody">
 {% block body %}
 {% endblock %}
-
+</div>
 <!-- Footer-->
-<footer>
+<footer class="fixed-bottom">
     <nav class="text-center">
         <div id="footerelt" class="bg-dark text-white footer-text">{% trans %}base.footerElt{% endtrans %}</div>
     </nav>

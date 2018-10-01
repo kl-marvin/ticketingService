@@ -3,12 +3,9 @@
 namespace AppBundle\Service;
 
 use AppBundle\Entity\Booking;
-use AppBundle\Manager\BookingManager;
-use Doctrine\ORM\EntityManagerInterface;
 use Stripe\Error\Card;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpFoundation\Response;
 
 class PaiementService
 {

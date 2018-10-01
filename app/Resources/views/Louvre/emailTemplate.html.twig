@@ -25,6 +25,7 @@
         <td style="padding-right: 10px; font-weight: bold">{% trans %}email.labelFirstName{% endtrans %}</td>
         <td style="padding-right: 10px; font-weight: bold">{% trans %}email.labelBirthdate{% endtrans %}</td>
         <td style="padding-right: 10px; font-weight: bold">{% trans %}email.labelPrice{% endtrans %}</td>
+        <td style="padding-right: 10px; font-weight: bold">{% trans %}reduced.labelPrice{% endtrans %}</td>
     </tr>
     {% for ticket in booking.tickets %}
     <tr>
@@ -32,6 +33,7 @@
             <td style="padding-right: 10px">{{ ticket.firstName }}</td>
             <td style="padding-right: 10px; text-align: center"> {{ ticket.birthDate|date("m/d/Y", "Europe/Paris") }}</td>
             <td style="padding-right: 10px; text-align: center">{{ ticket.price }}</td>
+            <td style="padding-right: 10px; text-align: center">{{ ticket.reducedPrice ? "✓" : "✖"}}</td>
 
     </tr>
     {% endfor %}

@@ -75,6 +75,7 @@ email.labelName: Nom
 email.labelFirstName: Prénom
 email.labelBirthdate: 'Date de Naissance'
 email.labelPrice: 'Prix du billet'
+reduced.labelPrice: 'Prix Réduit'
 email.paragraph6: 'Pour le tarif réduit, un justificatif vous sera demandé.'
 email.paragraph7: 'En cas de problème vous pouvez joindre le service client à l''adresse suivante :'
 exceptionFlashInvalidbooking.message: "Réservation en cours invalide. Merci de bien vouloir recommencer."

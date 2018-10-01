@@ -75,6 +75,7 @@ email.labelName: Name
 email.labelFirstName: 'First Name'
 email.labelBirthdate: Birthdate
 email.labelPrice: Prix
+reduced.labelPrice: 'Reduced Price'
 email.paragraph6: 'A document proof will be ask for reduce price'
 email.paragraph7: 'If you have any problem or question, feel free to contact our customer service at the following address :'
 exceptionFlashInvalidbooking.message: ""

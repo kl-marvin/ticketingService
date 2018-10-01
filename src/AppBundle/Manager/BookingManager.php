@@ -148,13 +148,13 @@ class BookingManager
                 $price = self::FREE;
             } elseif ($age < self::AGE_ADULT) {
                 $price = self::CHILD_PRICE;
-            } elseif ($age > self::AGE_SENIOR) {
+            } elseif ($age >= self::AGE_SENIOR) {
                 $price = self::SENIOR_PRICE;
             } else {
                 $price = self::PRICE_ADULT;
             }
 
-            if ($ticket->getReducedPrice() && $price > 10) {
+            if ($ticket->isReducedPrice() && $price > 10) {
                 $price = 10;
             }
 
@@ -183,14 +183,6 @@ class BookingManager
     }
 
 
-    /**
-     * @param Booking $booking
-     * @param \Swift_Mailer $mailer
-     */
-    public function sendEmail(Booking $booking, \Swift_Mailer $mailer, $html)
-    {
-
-    }
 
     public function save($booking)
     {

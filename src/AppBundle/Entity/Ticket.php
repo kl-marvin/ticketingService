@@ -242,15 +242,6 @@ class Ticket
         $this->reducedPrice = $reducedPrice;
     }
 
-    /**
-     * Get reducedPrice
-     *
-     * @return boolean
-     */
-    public function getReducedPrice()
-    {
-        return $this->reducedPrice;
-    }
 
 
     public function getAge()
