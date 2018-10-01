@@ -37,7 +37,7 @@ class ExceptionListener
 
         if ($exception instanceof NoCurrentBookingException || $exception instanceof InvalidCurrentBooking) {
             $response = new RedirectResponse($this->router->generate('homepage'));
-            $this->flashBag->add('warning', 'Erreur recup commande');
+            $this->flashBag->add('warning', 'exceptionFlashInvalidbooking.message');
             $event->setResponse($response);
 
         }
