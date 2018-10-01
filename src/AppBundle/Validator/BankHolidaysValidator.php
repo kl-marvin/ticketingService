@@ -40,14 +40,13 @@ class BankHolidaysValidator extends ConstraintValidator
 
         sort($holidays);
 
-        dump($holidays);
+
         return $holidays;
     }
 
 
     public function validate($date, Constraint $constraint)
     {
-        dump($date->format('U'));
         if ($date !== null) {
             $bankHoliday = static::getHolidays($date->format('Y'));
 
