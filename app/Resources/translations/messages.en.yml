@@ -36,14 +36,15 @@ oderstep_1.action.confirmEmail: 'Confirm your email'
 orderstep_1.action.fullDay: 'Full Day'
 orderstep_1.action.halfDay: 'Half Day'
 orderstep_1.action.order: order
-orderstep_1.paragraph6: 'Admission is free for children under 4 years old. You don''t need to order a ticket.'
+orderstep_1.paragraph6: 'Admission is free for children under 4 years old. You do not need to order a ticket.'
 orderstep_2.title: 'Ticket Details'
 orderstep_2.paragrah1: 'Normal price : 16€'
 orderstep_2.paragrah2: 'Child price: from 4 to 12 years old (8€)'
 orderstep_2.paragrah3: 'Senior price: from 60 years old (12€)'
 orderstep_2.paragrah4: 'Reduce price : student, employee of the Museum, department of the Minister of Culture, military (10€)'
 orderstep_2.paragraph5: 'Admission is free for children under 4 years old. You dont'' need to order a ticket'
-orderstep_2.paragraph6: 'A justicatory will be ask.'
+orderstep_2.paragraph6: 'A justificatory will be ask.'
+orderstep_2.button: 'Book'
 orderstep_2.action.choiceName: Name
 orderstep_2.action.choiceFirstName: 'First Name'
 orderstep_2.action.choiceBirthdate: Birthdate
@@ -70,9 +71,10 @@ email.paragraph2: 'Priority access by the Pyramid'
 email.paragraph3: 'Visit date :'
 email.paragraph4: 'Order reference : '
 email.paragraph5: 'Order Summary'
-'email.labelName:': Name
+email.labelName: Name
 email.labelFirstName: 'First Name'
 email.labelBirthdate: Birthdate
 email.labelPrice: Prix
 email.paragraph6: 'A document proof will be ask for reduce price'
 email.paragraph7: 'If you have any problem or question, feel free to contact our customer service at the following address :'
+exceptionFlashInvalidbooking.message: ""

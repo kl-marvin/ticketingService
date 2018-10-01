@@ -3,3 +3,4 @@
 'constraint.OpeningConstraint': 'After 5pm, you can not book a ticket for the current day.'
 'constraint.HalfdayConstraint': 'After 2pm, you can not book a Full Day ticket for the same day.'
 'constraint.BankHolidaysConstraint': 'You can not book a ticket on a French Bank Holiday.'
+constraint.SoldOut: "There is not enough ticket for this day. Number of ticket left :  **NB_TICKETS**"

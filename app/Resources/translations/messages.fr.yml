@@ -44,6 +44,7 @@ orderstep_2.paragrah3: 'Tarif senior: à partir de 60 ans (12€)'
 orderstep_2.paragrah4: "Tarif réduit: étudiant, employé du Musée, servicee du Ministère de la Culture, militaire sur présentation\n d'un justificatif (10€)"
 orderstep_2.paragraph5: 'Pour les enfants de moins de 4 ans, l''entrée est gratuite. Vous n''avez pas à réserver de billets.'
 orderstep_2.paragraph6: 'Un justificatif vous sera demandé.'
+orderstep_2.button: 'Réserver'
 orderstep_2.action.choiceName: Nom
 orderstep_2.action.choiceFirstName: Prénom
 orderstep_2.action.choiceBirthdate: 'Date de Naissance'
@@ -76,3 +77,4 @@ email.labelBirthdate: 'Date de Naissance'
 email.labelPrice: 'Prix du billet'
 email.paragraph6: 'Pour le tarif réduit, un justificatif vous sera demandé.'
 email.paragraph7: 'En cas de problème vous pouvez joindre le service client à l''adresse suivante :'
+exceptionFlashInvalidbooking.message: "Réservation en cours invalide. Merci de bien vouloir recommencer."
