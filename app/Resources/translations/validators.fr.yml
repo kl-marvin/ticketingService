@@ -1,4 +1,4 @@
-'Les addresses ne correspondent pas.': nonono
+orderstep_1.errorMail: 'Les adresses ne correspondent pas.'
 'constraint.TuesdayConstraint': 'Vous ne pouvez pas réserver de billet les Mardis.'
 'constraint.SundayConstraint': 'Vous ne pouvez pas réserver de billet les Dimanches.'
 'constraint.OpeningConstraint': 'Après 17h, vous ne pouvez plus réserver de billet pour la journée en cours.'

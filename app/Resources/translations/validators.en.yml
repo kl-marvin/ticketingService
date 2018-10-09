@@ -1,3 +1,4 @@
+orderstep_1.errorMail: 'The mail address submitted is incorrect.'
 'constraint.TuesdayConstraint': 'You can not book a ticket for Tuesdays.'
 'constraint.SundayConstraint': 'You can not book a ticket for Sundays'
 'constraint.OpeningConstraint': 'After 5pm, you can not book a ticket for the current day.'
