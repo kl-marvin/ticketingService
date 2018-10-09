@@ -3,7 +3,7 @@
 namespace Tests\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use AppBundle\Controller\DefaultController;
+use AppBundle\Controller\LouvreController;
 
 
 class ControllerUrlTest extends WebTestCase
@@ -23,11 +23,11 @@ class ControllerUrlTest extends WebTestCase
   public function urlProvider()
   {
     return array(
-      array('/fr/', 200),
+      array('/fr/', 200), // HTTP CONTENT : Status OK
       array('/fr/order', 200),
-      array('/fr/information',404),
-      array('/fr/checkout',404),
-      array('/fr/confirmation',404),
+      array('/fr/information',302), // Redirection
+      array('/fr/checkout',302),
+      array('/fr/confirmation',302),
     );
   }
 }
