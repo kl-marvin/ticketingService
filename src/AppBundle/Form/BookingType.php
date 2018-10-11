@@ -26,7 +26,7 @@ class BookingType extends AbstractType
         $builder
             ->add('email',  RepeatedType::class, array(
                 'type' => EmailType::class,
-                'invalid_message' => 'error.Les addresses ne correspondent pas.',
+                'invalid_message' => 'orderstep_1.errorMail',
                 'required' => true,
                 'first_options' => array('label' => 'orderstep_1.action.chooseEmail'),
                 'second_options' => array('label' => 'oderstep_1.action.confirmEmail'),

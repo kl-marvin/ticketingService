@@ -51,6 +51,16 @@ class BookingManager
      */
     const AGE_SENIOR = 60;
 
+    /**
+     *
+     */
+    const PRICE_REDUCED = 10;
+
+    /**
+     *
+     */
+    const REDUCE_COEFF = 0.5;
+
 
     /**
      * @var SessionInterface
@@ -154,12 +164,12 @@ class BookingManager
                 $price = self::PRICE_ADULT;
             }
 
-            if ($ticket->isReducedPrice() && $price > 10) {
-                $price = 10;
+            if ($ticket->isReducedPrice() && $price > self::PRICE_REDUCED) {
+                $price = self::PRICE_REDUCED;
             }
 
             if ($booking->getType() == Booking::TYPE_HALF_DAY) {
-                $price *= 0.5;
+                $price *= self::REDUCE_COEFF;
             }
 
             $totalPrice += $price;

@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
-class DefaultController extends Controller
+class LouvreController extends Controller
 {
     /**
      * @Route("/", name="homepage")
