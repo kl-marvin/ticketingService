@@ -139,7 +139,6 @@ class BookingManager
           throw new InvalidCurrentBooking("No current booking");
         };
 
-
         return $booking;
     }
 
@@ -191,8 +190,6 @@ class BookingManager
         return $ref;
 
     }
-
-
 
     public function save($booking)
     {

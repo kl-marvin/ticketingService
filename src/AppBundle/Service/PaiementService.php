@@ -47,10 +47,6 @@ class PaiementService
 
             }catch(Card $exception)
             {
-                //TODO
-                // lever une exception
-
-                // $this->addFlash('warning', 'Il y a eu un problème lors de votre paiement. La transaction a été annulée');
                 return false;
             }
         }
@@ -58,7 +54,6 @@ class PaiementService
 
         return false;
 
-//
 
     }
 }

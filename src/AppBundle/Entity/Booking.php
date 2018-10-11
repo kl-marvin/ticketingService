@@ -52,7 +52,7 @@ class Booking
     /**
      * @var \DateTime
      * @Assert\DateTime(groups={"init"})
-     * @Assert\GreaterThanOrEqual("today")
+     * @Assert\GreaterThanOrEqual("today", groups={"init"})
      * @LouvreAssert\TuesdaysClosing(groups={"init"})
      * @LouvreAssert\SundaysClosing(groups={"init"})
      * @LouvreAssert\BankHolidays(groups={"init"})
@@ -71,6 +71,7 @@ class Booking
     /**
      * @var string
      * @Assert\Email(groups={"init"})
+     * @Assert\NotBlank(groups={"init"})
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
@@ -306,6 +307,7 @@ class Booking
     public function __construct()
     {
         $this->tickets = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->date = new \DateTime();
     }
 
     /**
