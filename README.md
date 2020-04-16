@@ -5,7 +5,6 @@
 
 ------
 
-Projet en ligne : http://louvre.klm-dev.fr/fr/
 
 Instructions complètes : "[Développez un back-end pour un client](https://openclassrooms.com/fr/projects/developpez-un-back-end-pour-un-client)"
 
